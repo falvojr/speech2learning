@@ -5,40 +5,44 @@ Repositório com diagramas e artefatos da Speech2Learning, uma arquitetura basea
 ## Diagram de Componentes
 
 ```mermaid
-graph BT;
-  subgraph "Infraestrutura (Frameworks & Drivers)";
+graph RL;
+  subgraph "Infraestrutura (<em>Frameworks & Drivers</em>)";
     Web(Web) --- Con
     Dis(Dispositivos) --- Con
     UI("Interface do Usuário (UI)") --- Pre
-    EXT(Integrações Externas)
-    BD(Banco de Dados)
+    EXT(Integrações Externas) --- Gat
+    BD(Banco de Dados) --- Gat
 
-    subgraph "Adaptadores de Interface";
-        Con(Controllers) --- UC
-        Pre(Presenters) --- UC
-        Gat(Gateways) -..- IGat
+    subgraph "Adaptadores (<em>Interface Adapters</em>)";
+      Con(Controllers) --- UC
+      Pre(Presenters) --- UC
+      Gat(Gateways) -..-> |implementam| IGat
 
-        subgraph "Casos de Uso";
-            UC(Casos de Uso) --- OA
+      subgraph "Aplicação (<em>Use Cases</em>)";
+        UC(Casos de Uso) --- OA
+        UC --- IGat
 
-            subgraph "Entidades";
-                OA(Objetos de Aprendizagem) --- |possui| MD[Metadados]
-                IGat(Interfaces dos Gateways)
-            end
-            UC --- IGat
+        subgraph "Entidades (<em>Entities</em>)";
+          OA("Objetos de Aprendizagem (OA)")
+          OA -.-> |contemplam| OAA(OA Audíveis)
+          OAA -.-> |possuem| Tra(Transcrição)
+          IGat(Interfaces de Gateways)
+          IGat -.-> |contemplam| Rep(Interfaces de Repositórios)
+          IGat -.-> |contemplam| Rec(Interfaces de Reconhecimento de Fala)
         end
+     end
     end
-    Gat ---- BD
-    Gat --- EXT
   end
 
 classDef infra fill:#a3c9ff,stroke:#00315c,color:#00315c;
 classDef adapters fill:#67dbb1,stroke:#003828,color:#003828;
 classDef ucs fill:#ffb1c1,stroke:#5f112b,color:#5f112b;
 classDef entities fill:#e2c54b,stroke:#3a3000,color:#3a3000;
+classDef entities_secondary fill:#fff0c0,stroke:#3a3000,color:#3a3000,stroke-dasharray: 4 4;
 
 class Web,Dis,UI,BD,EXT infra;
 class Con,Gat,Pre adapters;
 class UC ucs;
-class OA,MD,IGat entities;
+class OA,IGat entities;
+class OAA,Tra,Rep,Rec entities_secondary;
 ```

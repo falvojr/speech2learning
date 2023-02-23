@@ -6,29 +6,29 @@ Repositório com diagramas e artefatos da Speech2Learning, uma arquitetura basea
 
 ```mermaid
 graph RL;
-  subgraph "Infraestrutura (<em>Frameworks & Drivers</em>)";
+  subgraph "Infraestrutura";
     Web(Web) --- Con
     Dis(Dispositivos) --- Con
     UI("Interface do Usuário (UI)") --- Pre
+    BD(Bancos de Dados) --- Gat
     EXT(Integrações Externas) --- Gat
-    BD(Banco de Dados) --- Gat
 
-    subgraph "Adaptadores (<em>Interface Adapters</em>)";
+    subgraph "Adaptadores";
       Con(Controllers) --- UC
       Pre(Presenters) --- UC
-      Gat(Gateways) -..-> |implementam| IGat
+      Gat(Gateways) -...-> |implementam| IGat
 
-      subgraph "Aplicação (<em>Use Cases</em>)";
+      subgraph "Aplicação";
         UC(Casos de Uso) --- OA
         UC --- IGat
 
-        subgraph "Entidades (<em>Entities</em>)";
+        subgraph "Entidades";
           OA("Objetos de Aprendizagem (OA)")
           OA -.-> |contemplam| OAA(OA Audíveis)
           OAA -.-> |possuem| Tra(Transcrição)
           IGat(Interfaces de Gateways)
-          IGat -.-> |contemplam| Rep(Interfaces de Repositórios)
-          IGat -.-> |contemplam| Rec(Interfaces de Reconhecimento de Fala)
+          IGat -.-> |contemplam| IRep(Interfaces de Repositórios)
+          IGat -.-> |contemplam| IS2T(Interfaces de Reconhecimento de Fala)
         end
      end
     end
@@ -44,5 +44,5 @@ class Web,Dis,UI,BD,EXT infra;
 class Con,Gat,Pre adapters;
 class UC ucs;
 class OA,IGat entities;
-class OAA,Tra,Rep,Rec entities_secondary;
+class OAA,Tra,IRep,IS2T entities_secondary;
 ```

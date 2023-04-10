@@ -2,7 +2,7 @@
 
 Repositório de documentação e artefatos da Speech2Learning, uma arquitetura que tem como objetivo oferecer uma abstração de software que favoreça a acessibilidade de conteúdos educacionais por meio do conceito de reconhecimento de fala. Especificamente, a Speech2Learning tem foco na acessibilidade de conteúdos audíveis, os quais são convertidos em texto, gerando insumos para transcrições, legendas ou sinalização em línguas de sinais (através de um avatar de LIBRAS baseado em texto, como o Hand Talk, por exemplo). Além disso, esta proposta possui sinergia com os conceitos de Objetos de Aprendizagem (OA) e Recursos Educacionais Abertos (REAs), os quais foram integrados à arquitetura visando a padronização de artefatos de ensino reutilizáveis e (preferencialmente) licenciados de maneira aberta.
 
-## Mapeamento Sistemático da Literatura: Nosso "Porque"
+## Mapeamento Sistemático da Literatura
 
 Antes de propormos a Arquitetura Speech2Learning, conduzimos um Mapeamento Sistemático (MS) com o objetivo de identificar como a tecnologia tem contribuído para o ensino e aprendizagem por meio das línguas de sinais (FalvoJr et al., [2020a](https://doi.org/10.5753/cbie.sbie.2020.812); [2020b](https://doi.org/10.1109/FIE44824.2020.9274169); [2020c](https://doi.org/10.22456/1679-1916.110217)). O MS identificou 185 estudos primários, oferecendo um panorama das principais soluções tecnológicas relacionadas à educação para surdos e delimitando as publicações focadas na Língua Brasileira de Sinais (LIBRAS).
 
@@ -10,7 +10,7 @@ Em geral, o MS concluiu que a tecnologia já tem contribuído significativamente
 
 Tecnicamente, a Speech2Learning propõe um arcabouço genérico, que não se limita apenas às línguas de sinais. Contudo, ela oferece uma abstração que facilita a acessibilidade de objetos de aprendizagem audíveis, permitindo que suas transcrições sejam geradas e, consequentemente, possibilitando a sinalização dos mesmos. Nesse contexto, soluções baseadas em avatares (como o [Hand Talk](https://www.handtalk.me/), que se destacou em nosso MS) podem ser exploradas a partir das transcrições, tornando os conteúdos acessíveis ao público das línguas de sinais.
 
-## Referências e Influências: Nosso "Como"
+## Principais Influências
 
 Nesse contexto, propomos a Arquitetura Speech2Learning, uma adaptação da *Clean Architecture* [(Martin, 2012)](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) no domínio educacional, com o objetivo de promover a acessibilidade de objetos de aprendizagem através do reconhecimento de fala. Antes de apresentarmos o desenho da Speech2Learning, é importante fundamentar brevemente a *Clean Architecture* e suas principais características.
 

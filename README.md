@@ -1,116 +1,26 @@
 # Arquitetura Speech2Learning
 
-Repositório com diagramas e artefatos da Speech2Learning, uma arquitetura baseada em reconhecimento de fala para acessibilidade de conteúdos educacionais audíveis.
+Repositório de documentação e artefatos da Speech2Learning, uma arquitetura que tem como objetivo oferecer uma abstração de software que favoreça a acessibilidade de conteúdos educacionais por meio do conceito de reconhecimento de fala. Especificamente, a Speech2Learning tem foco na acessibilidade de conteúdos audíveis, os quais são convertidos em texto, gerando insumos para transcrições, legendas ou sinalização em línguas de sinais (através de um avatar de LIBRAS baseado em texto, como o Hand Talk, por exemplo). Além disso, esta proposta possui sinergia com os conceitos de Objetos de Aprendizagem (OA) e Recursos Educacionais Abertos (REAs), os quais foram integrados à arquitetura visando a padronização de artefatos de ensino reutilizáveis e (preferencialmente) licenciados de maneira aberta.
 
-## Diagram de Componentes: Visão Arquitetural
+## Mapeamento Sistemático da Literatura: Nosso "Porque"
 
-```mermaid
-graph RL;
-  subgraph "Infraestrutura";
-    Web(Web) --- Con
-    Dis(Dispositivos) --- Con
-    UI("Interface do Usuário (UI)") --- Pre
-    BD(Bancos de Dados) --- Gat
-    EXT(Integrações Externas) --- Gat
+Antes de propormos a Arquitetura Speech2Learning, conduzimos um Mapeamento Sistemático (MS) com o objetivo de identificar como a tecnologia tem contribuído para o ensino e aprendizagem por meio das línguas de sinais (FalvoJr et al., [2020a](https://doi.org/10.5753/cbie.sbie.2020.812); [2020b](https://doi.org/10.1109/FIE44824.2020.9274169); [2020c](https://doi.org/10.22456/1679-1916.110217)). O MS identificou 185 estudos primários, oferecendo um panorama das principais soluções tecnológicas relacionadas à educação para surdos e delimitando as publicações focadas na Língua Brasileira de Sinais (LIBRAS).
 
-    subgraph "Adaptadores";
-      Con(Controllers) --- UC
-      Pre(Presenters) --- UC
-      Gat(Gateways) -...-> |implementam| IGat
+Em geral, o MS concluiu que a tecnologia já tem contribuído significativamente para o ensino e aprendizagem através das línguas de sinais. No entanto, os estudos primários carecem de padrões e boas práticas de desenvolvimento que possam favorecer o compartilhamento de seus objetos de aprendizagem. Diante dessa lacuna, a arquitetura de software Speech2Learning foi criada para promover a construção de soluções que estejam estruturalmente preparadas para a inclusão de pessoas surdas no processo de ensino e aprendizagem, por meio da acessibilidade de conteúdos educacionais audíveis.
 
-      subgraph "Aplicação";
-        UC(Casos de Uso) --- OA
-        UC --- IGat
+Tecnicamente, a Speech2Learning propõe um arcabouço genérico, que não se limita apenas às línguas de sinais. Contudo, ela oferece uma abstração que facilita a acessibilidade de objetos de aprendizagem audíveis, permitindo que suas transcrições sejam geradas e, consequentemente, possibilitando a sinalização dos mesmos. Nesse contexto, soluções baseadas em avatares (como o [Hand Talk](https://www.handtalk.me/), que se destacou em nosso MS) podem ser exploradas a partir das transcrições, tornando os conteúdos acessíveis ao público das línguas de sinais.
 
-        subgraph "Entidades";
-          OA("Objetos de Aprendizagem (OA)")
-          OA -.-> |contemplam| OAA(OA Audíveis)
-          OAA -.-> |possuem| Tra(Transcrição)
-          IGat(Interfaces de Gateways)
-          IGat -.-> |contemplam| IRep(Interfaces de Repositórios)
-          IGat -.-> |contemplam| IS2T(Interfaces de Reconhecimento de Fala)
-        end
-     end
-    end
-  end
+## Referências e Influências: Nosso "Como"
 
-classDef infra fill:#a3c9ff,stroke:#00315c,color:#00315c;
-classDef adapters fill:#67dbb1,stroke:#003828,color:#003828;
-classDef ucs fill:#ffb1c1,stroke:#5f112b,color:#5f112b;
-classDef entities fill:#e2c54b,stroke:#3a3000,color:#3a3000;
-classDef entities_secondary fill:#fff0c0,stroke:#3a3000,color:#3a3000,stroke-dasharray: 4 4;
+Nesse contexto, propomos a Arquitetura Speech2Learning, uma adaptação da *Clean Architecture* [(Martin, 2012)](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) no domínio educacional, com o objetivo de promover a acessibilidade de objetos de aprendizagem através do reconhecimento de fala. Antes de apresentarmos o desenho da Speech2Learning, é importante fundamentar brevemente a *Clean Architecture* e suas principais características.
 
-class Web,Dis,UI,BD,EXT infra;
-class Con,Gat,Pre adapters;
-class UC ucs;
-class OA,IGat entities;
-class OAA,Tra,IRep,IS2T entities_secondary;
-```
+O termo *Clean Architecture* foi cunhado por Robert Martin (Uncle Bob) em 2012 e tem se difundido desde então, principalmente pelo sucesso de sua série de livros (Martin, [2008](https://www.amazon.com/gp/product/0132350882); [2011](https://www.amazon.com/gp/product/0137081073); [2017](https://www.amazon.com/gp/product/0134494164); [2019](https://www.amazon.com/gp/product/0135781868); [2021](https://www.amazon.com/gp/product/013691571X)). Em linhas gerais, a *Clean Architecture* é uma ideia prática que integra algumas das principais referências em Engenharia de Software nas últimas décadas, incluindo:  
 
-## Diagram de Sequencia: Caso de Uso Criar Audio Transcrito
+-   *Hexagonal Architecture* (também conhecida como *Ports and Adapters*): Idealizada por [Cockburn (2005)](https://alistair.cockburn.us/hexagonal-architecture) e adotada no livro de [Freeman e Pryce (2009)](https://www.amazon.com.br/Growing-Object-Oriented-Software-Guided-Tests/dp/0321503627), que, segundo Robert Martin: "Expõe a profunda simbiose entre Test Driven Development (TDD) e Object Oriented Design (OOD)";
+-   *Onion Architecture*: Proposta por [Palermo (2008)](https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1), é estruturalmente muito similar à *Clean Architecture* e foi uma das precursoras a propor camadas concêntricas;
+-   *Data, Context and Interaction (DCI)*: [Coplien e Reenskaug (2012)](https://www.amazon.com/Agile-Software-Architecture-Paradigm-Orientation-ebook/dp/B019ZTY6EM) definem o paradigma DCI, o qual nos faz refletir sobre a forma como lidamos com a Programação Orientada a Objetos (POO), sugerindo o DCI como fundamento para um código mais expressivo [(Reenskaug, 2009)](https://dci.github.io/documents/commonsense.pdf). Um adendo interessante é que Reenskaug também é o criador do padrão MVC;
+-   *Boundary, Control and Entity (BCE)*: Desenvolvido por Ivar Jacobson, um dos pioneiros da UML, é um padrão arquitetural que favorece a engenharia de software orientada a objetos guiada por casos de uso [(Jacobson, 1992)](https://www.amazon.com/Object-Oriented-Software-Engineering-Approach/dp/0201544350).
 
-```mermaid
-sequenceDiagram
-    box rgb(0, 49, 92) Infraestrutura
-    participant API as Web API
-    participant Cloud
-    participant MongoDB
-    end
-    box rgb(0, 56, 40) Adaptadores
-    participant Controller as AudioRestController
-    participant SttGateway as SttCloudGateway
-    participant DataGateway as AudioMongoDbGateway
-    end
-    box rgb(95, 17, 43) Casos de Uso
-    participant CreateUC as CreateTranscribedAudioUC
-    end
-    box rgb(58, 48, 0) Objetos de Aprendizagem #40;Entidades#41;
-    participant Entity as Audio
-    participant ISttGateway as #60;I#62;SttGateway
-    participant IDataGateway as #60;I#62;AudioGateway
-    end
-    
-    API-)+Controller: HTTP POST /audios<br/>Content-Language: pt_BR
-    Controller->>+CreateUC: Adpata o corpo da requisição HTTP para uma estrutura conveniente ao Caso de Uso (UC)
-    CreateUC->>+Entity: Cria um "Audio" com os dados de "Entrada"
-    critical Regras cruciais de negócio falharam
-        Entity--xCreateUC: Trata como uma exceção de negócio
-    end
-    Entity-->>-CreateUC: Retorna a instância do "Audio" validada
-    CreateUC->>+ISttGateway: Solicita a transcrição do áudio para a abstração de reconhecimento de fala
-    SttGateway-->>ISttGateway: Provê a implementação concreta para o reconhecimento de fala.
-    activate SttGateway
-    alt AWS Provider Enabled
-        SttGateway-)+Cloud: Consome o serviço em nuvem "Amazon Transcribe".
-    else Google Provider Enabled
-        SttGateway-)Cloud: Consome o serviço em nuvem "GCP Speech-To-Text".
-    else Microsoft Provider Enabled
-        SttGateway-)Cloud: Consome o serviço em nuvem "Azure Speech-To-Text".
-    else IBM Provider Enabled
-        SttGateway-)Cloud: Consome o serviço em nuvem "Watson Speech-To-Text".
-    end
-    Cloud--)-SttGateway: Transcrição automática do áudio
-    deactivate SttGateway
-    critical Falha na transcrição do áudio
-        ISttGateway--xCreateUC: Trata como uma exceção de negócio
-    end
-    ISttGateway-->>-CreateUC: Retorna a transcrição do áudio.
-    CreateUC->>+Entity: Adiciona a transcrição e língua nos Metadados.
-    Entity->>Entity: Preenche os Metadados, versionando-os como "v0".
-    Entity-->>-CreateUC: Retorna a instância do "Audio" com os Metadados preparados.
-    CreateUC->>+IDataGateway: Solicita a persistência do áudio e seus respectivos Metadados.
-    DataGateway-->>IDataGateway: Provê a implementação concreta para a persistência de dados.
-    activate DataGateway
-    Note over MongoDB: Usa o GridFS para armazenar/recuperar arquivos
-    par Armazena o arquivo de áudio
-        DataGateway-)+MongoDB: Persiste o arquivo na collection "fs.chunks".
-    and Armazena os metadados do arquivo de áudio
-        DataGateway-)MongoDB: Persiste os metadados na collection "fs.files".
-    end 
-    MongoDB--)-DataGateway: Retorna o ObjectId do documento persistido/mapeado.
-    deactivate DataGateway
-    CreateUC->>CreateUC: Consolida os dados em uma "Saida"
-    CreateUC -->- Controller: Retorna o ID do Audio criado
-    Controller--)-API: HTTP Status 203 (Created)
+Todas essas iniciativas compartilham a ideia de separar o código em camadas independentes e ter o domínio no centro da arquitetura, permitindo a criação de sistemas altamente testáveis, independentes de tecnologia e adaptáveis às necessidades específicas de um projeto. Embora a *Clean Architecture* tenha uma estrutura geral definida por Robert Martin, é importante lembrar que ela possui flexibilidade e adaptabilidade como algumas de suas principais características. É possível, por exemplo, adicionar novas camadas, ajustar as responsabilidades, modificar a granularidade dos componentes da arquitetura e até mesmo introduzir novas tecnologias ou padrões. 
 
-```
+Tais características, aliadas à grande aceitação da *Clean Architecture* na indústria, sugerem uma referência sólida e confiável para abordarmos os gaps identificados em nosso MS, visando potencializar a criação de soluções educacionais flexíveis e modulares, com foco em reúso e independência de tecnologia. Nesse contexto, propomos a Arquitetura Speech2Learning, uma adaptação da *Clean Architecture* que mantém todas as suas características intrínsecas, mas formaliza aspectos importantes para a acessibilidade de objetos de aprendizagem audíveis. Com isso, nossa intenção é definir uma estrutura que favoreça a construção de soluções educacionais acessíveis, as quais podem beneficiar aprendizes surdos através de transcrições interpretadas por avatares de línguas de sinais, por exemplo.

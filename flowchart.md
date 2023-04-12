@@ -1,28 +1,28 @@
 ```mermaid
 graph RL;
-  subgraph "Infraestrutura";
-    Web(Web) --- Con
-    Dis(Dispositivos) --- Con
-    UI("Interface do Usuário (UI)") --- Pre
-    BD(Bancos de Dados) --- Gat
-    EXT(Integrações Externas) --- Gat
+  subgraph layer-infra[Infraestrutura];
+    Web(Web) --> Con
+    Dis(Dispositivos) --> Con
+    UI("Interface do Usuário (UI)") <--> Pre
+    BD(Bancos de Dados) <--> Gat
+    EXT(Integrações Externas) <--> Gat
 
-    subgraph "Adaptadores";
-      Con(Controllers) --- UC
-      Pre(Presenters) --- UC
+    subgraph layer-adpaters[Adaptadores];
+      Con(Controllers) --> UC
+      Pre(Presenters) <--> UC
       Gat(Gateways) -...-> |implementam| IGat
 
-      subgraph "Aplicação";
-        UC(Casos de Uso) --- OA
-        UC --- IGat
+      subgraph layer-app[Aplicação];
+        UC(Casos de Uso) <--> OA
+        UC <--> IGat
 
-        subgraph "Entidades";
+        subgraph layer-entities[Entidades];
           OA("Objetos de Aprendizagem (OA)")
-          OA -.-> |contemplam| OAA(OA Audíveis)
-          OAA -.-> |possuem| Tra(Transcrição)
+          OA -.- |contemplam| OAA(OA Audíveis)
+          OAA -.- |possuem| Meta(Metadados)
           IGat(Interfaces de Gateways)
-          IGat -.-> |contemplam| IRep(Interfaces de Repositórios)
-          IGat -.-> |contemplam| IS2T(Interfaces de Reconhecimento de Fala)
+          IGat -.- |contemplam| IRep(Interfaces de Repositórios)
+          IGat -.- |contemplam| IS2T(Interfaces de Reconhecimento de Fala)
         end
      end
     end
@@ -38,5 +38,5 @@ class Web,Dis,UI,BD,EXT infra;
 class Con,Gat,Pre adapters;
 class UC ucs;
 class OA,IGat entities;
-class OAA,Tra,IRep,IS2T entities_secondary;
+class OAA,Meta,IRep,IS2T entities_secondary;
 ```

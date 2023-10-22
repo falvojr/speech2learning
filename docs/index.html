@@ -36,7 +36,7 @@
       const videoElement = document.getElementById('video');
 
       try {
-        const response = await fetch('https://falvojr.github.io/speech2learning/videos/507f1f77bcf86cd799439011/data.json');
+        const response = await fetch('https://falvojr.github.io/speech2learning/v1/player/mock.json');
         if (!response.ok) throw new Error('Network response was not ok ' + response.statusText);
         
         const data = await response.json();

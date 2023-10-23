@@ -1,4 +1,4 @@
-# Arquitetura Speech2Learning
+# Arquitetura Speech2Learning (S2L)
 
 Repositório de documentação e artefatos da Speech2Learning, uma arquitetura que tem como objetivo oferecer uma abstração de software que favoreça a acessibilidade de conteúdos educacionais por meio do conceito de reconhecimento de fala. Especificamente, a Speech2Learning tem foco na acessibilidade de conteúdos audíveis, os quais são convertidos em texto, gerando insumos para transcrições, legendas ou sinalização em línguas de sinais (através de um avatar de LIBRAS baseado em texto, como o Hand Talk, por exemplo). Além disso, esta proposta possui sinergia com os conceitos de Objetos de Aprendizagem (OA) e Recursos Educacionais Abertos (REAs), os quais foram integrados à arquitetura visando a padronização de artefatos de ensino reutilizáveis e (preferencialmente) licenciados de maneira aberta.
 

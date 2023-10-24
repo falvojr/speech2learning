@@ -24,7 +24,7 @@ exportPdfButton.addEventListener('click', () => {
 // Função para fazer a requisição HTTP GET
 getApiButton.addEventListener('click', () => {
   // Fazer a requisição HTTP GET para o JSON
-  fetch('https://falvojr.github.io/speech2learning/v1/player/mock.json')
+  fetch('https://falvojr.github.io/speech2learning/api/mock.json')
     .then((response) => response.json())
     .then((data) => {
       // Exibir os dados na div "api-data"
@@ -67,7 +67,7 @@ getApiButton.addEventListener('click', () => {
 
 // Função para carregar o resumo com base no idioma selecionado
 function carregarResumo(idioma) {
-  fetch(`https://falvojr.github.io/speech2learning/videos/507f1f77bcf86cd799439011/transcript/${idioma}.html`)
+  fetch(`https://falvojr.github.io/speech2learning/api/videos/507f1f77bcf86cd799439011/transcript/${idioma}.txt`)
     .then((response) => response.text())
     .then((resumo) => {
       const resumoText = document.getElementById('resumo-text');

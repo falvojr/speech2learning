@@ -61,7 +61,7 @@ function api_return_html(){
   
 // Função para fazer a requisição HTTP GET
 function getApiData() {
-    fetch(url_base+'/v1/player/mock.json')
+    fetch(url_base+'/api/mock.json')
         .then((response) => response.json())
         .then((data) => {
         console.log('data: ', data);
@@ -77,7 +77,7 @@ elements.getApiButton.addEventListener('click', getApiData);
 
 // Função para carregar o resumo com base no idioma selecionado
 function carregarResumo(idioma) {
-    fetch(url_base+`/videos/${api_return.id}/transcript/${idioma}.html`)
+    fetch(url_base+`/api/videos/${api_return.id}/transcript/${idioma}.txt`)
         .then((response) => response.text())
         .then((resumo) => {
         elements.resumoText.innerHTML = resumo;

@@ -1,0 +1,151 @@
+﻿1
+00:00:05,872 --> 00:00:07,874
+Hi guys, how are you?
+
+2
+00:00:07,874 --> 00:00:10,844
+In the previous video, you watched Venilton,
+
+3
+00:00:10,844 --> 00:00:13,847
+D.I.O. expert, author of this course.
+
+4
+00:00:13,847 --> 00:00:16,850
+Now you will have a slightly different experience,
+
+5
+00:00:16,850 --> 00:00:19,853
+but still created by him.
+
+6
+00:00:19,853 --> 00:00:22,856
+The voice you are hearing was borrowed by Venilton himself
+
+7
+00:00:22,856 --> 00:00:26,860
+through an advanced technique of voice cloning.
+
+8
+00:00:26,860 --> 00:00:31,865
+About my appearance, it is obvious that I am not a representation of Venilton,
+
+9
+00:00:31,865 --> 00:00:36,870
+but I was carefully designed by him to co-create content.
+
+10
+00:00:36,870 --> 00:00:42,842
+Our goal with this is to provide a unique educational experience,
+
+11
+00:00:42,842 --> 00:00:50,850
+showing the potential of generative IAs like me in the teaching and learning process.
+
+12
+00:00:50,850 --> 00:00:55,855
+You may be wondering, but after all, what are generative IAs?
+
+13
+00:00:55,855 --> 00:00:57,857
+This is an excellent question.
+
+14
+00:00:57,857 --> 00:01:03,863
+Generative IAs are systems capable of creating, adapting and improving content
+
+15
+00:01:03,863 --> 00:01:07,867
+autonomously, always learning and improving.
+
+16
+00:01:07,867 --> 00:01:14,874
+Think of a mechanism capable of generating images, music, texts, voices,
+
+17
+00:01:14,874 --> 00:01:18,845
+and even virtual avatars, like what you see now.
+
+18
+00:01:18,845 --> 00:01:23,850
+All this with a quality that is similar to human work.
+
+19
+00:01:24,851 --> 00:01:29,856
+In the universe of generative IAs, we have stars like the GPT model,
+
+20
+00:01:29,856 --> 00:01:32,859
+the Generative Pre-trained Transformer,
+
+21
+00:01:32,859 --> 00:01:37,864
+which symbolizes a true revolution in artificial intelligence.
+
+22
+00:01:37,864 --> 00:01:43,870
+It stands out, especially when it comes to natural language processing,
+
+23
+00:01:43,870 --> 00:01:48,875
+understanding, generating and translating texts with incredible precision.
+
+24
+00:01:48,875 --> 00:01:53,847
+It is thanks to the GPT that we were able to transcribe and legendize this course
+
+25
+00:01:53,847 --> 00:01:57,851
+in three languages, Portuguese, English and Spanish.
+
+26
+00:01:57,851 --> 00:02:02,856
+Thus, we are expanding our accessibility with concrete steps
+
+27
+00:02:02,856 --> 00:02:06,860
+towards a more inclusive education on our platform.
+
+28
+00:02:06,860 --> 00:02:10,864
+Now that we know a little more about artificial intelligences,
+
+29
+00:02:10,864 --> 00:02:15,869
+it is worth noting how they are revolutionizing different sectors.
+
+30
+00:02:15,869 --> 00:02:20,874
+From the creation of digital art to the driving of autonomous vehicles,
+
+31
+00:02:20,874 --> 00:02:26,846
+these IAs are impacting various areas and, of course, education.
+
+32
+00:02:26,846 --> 00:02:32,852
+Here at DIO, we are exploring these technologies to offer a more dynamic,
+
+33
+00:02:32,852 --> 00:02:36,856
+immersive and especially accessible learning.
+
+34
+00:02:36,856 --> 00:02:41,861
+The world of generative IAs is wide and full of opportunities.
+
+35
+00:02:41,861 --> 00:02:46,866
+We are still in the initial stages for the discovery of all its potential.
+
+36
+00:02:46,866 --> 00:02:51,871
+So we invite everyone to join us on this fascinating journey,
+
+37
+00:02:51,871 --> 00:02:58,845
+in which we will explore some of the main practical applications of IAs today.
+
+38
+00:02:58,845 --> 00:03:01,848
+Are you ready? Let's go on this adventure together!

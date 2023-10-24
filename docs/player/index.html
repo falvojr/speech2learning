@@ -20,21 +20,30 @@
 
     <div class="col-5 col-s-4">
         <div class="aside ">
-            <h2>Lorem?</h2>
-            <p>Ipsum</p>
-            <h2>Lorem?</h2>
-            <p>Ipsum</p>
-            <h2>Lorem?</h2>
-            <p>Ipsum</p>
-            <h2>Lorem?</h2>
-            <p>Ipsum</p>
-            <h2>Lorem?</h2>
-            <p>Ipsum</p>
-            <h2>Lorem?</h2>
-            <p>Ipsum</p>
-            <h2>Lorem?</h2>
-            <p>Ipsum</p>
+            <button id="resumo-pt-BR" class="resumo-idioma">
+                <img src="./assets/icon/pt-br.png" alt="Bandeira do Português (BR)">
+            </button>
+            <button id="resumo-en-US" class="resumo-idioma">
+                <img src="./assets/icon/en-us.png" alt="Bandeira do Inglês (US)">
+            </button>
+            <button id="resumo-es-ES" class="resumo-idioma">
+                <img src="./assets/icon/es-es.png" alt="Bandeira do Espanhol (ES)">
+            </button>
+
+            <p id="resume-text"></p>
         </div>
+        
+        <!-- Ícone do VLibras para acessibilidade -->
+        <div vw class="enabled vlibras-icon">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>
     </div>
 
     <div class="col-7 col-s-8">
@@ -67,7 +76,7 @@
     </div>!-->
 
     <div class="footer">
-        <p>Resize the browser window to see how the content respond to the resizing.</p>
+        <p>University of São Paulo &copy; 2023</p>
     </div>
 
     <script src="js/lib.js"></script>

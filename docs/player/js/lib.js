@@ -14,14 +14,24 @@ let api_return = {
     url: ''
 }
 
-async function loadVideo() {
+// Módulo de elementos da página
+const elements = {
+    resumoButtonBR: document.getElementById('resumo-pt-BR'),
+    resumoButtonUS: document.getElementById('resumo-en-US'),
+    resumoButtonES: document.getElementById('resumo-es-ES'),
+    resumoText: document.getElementById('resume-text'),
+};
+
+// Carregar video a partir do retorno da api
+async function loadVideo(videoElement) {
     const sourceElement = document.createElement('source');
     sourceElement.src = api_return.url;
     sourceElement.type = 'video/mp4';
     videoElement.appendChild(sourceElement);
 }
 
-async function loadSubtitles(){
+// Carregar legendas a partir do retorno da api
+async function loadSubtitles(videoElement){
     api_return.metadata.subtitles.forEach(subtitle => {
         const trackElement = document.createElement('track');
         trackElement.kind = 'subtitles';
@@ -34,6 +44,19 @@ async function loadSubtitles(){
     });
 }
 
+// Carregar o resumo com base no idioma selecionado
+function carregarResumo(idioma) {
+    fetch(url_base+`/api/videos/${api_return.id}/transcript/${idioma}.txt`)
+        .then((response) => response.text())
+        .then((resumo) => {
+        elements.resumoText.innerHTML = resumo;
+        })
+        .catch((error) => {
+        console.error(`Erro ao carregar resumo em ${idioma}:`, error);
+        });
+}
+
+// Evento para carregar video e legenda ao entrar na página.
 document.addEventListener('DOMContentLoaded', async () => {
     const videoElement = document.getElementById('video');
 
@@ -44,12 +67,17 @@ document.addEventListener('DOMContentLoaded', async () => {
         api_return = await response.json();
 
         // Carregar o vídeo
-        await loadVideo();
+        await loadVideo(videoElement);
 
         // Carregar as legendas
-        await loadSubtitles();
+        await loadSubtitles(videoElement);
         
     } catch (error) {
         console.error('There has been a problem with your fetch operation:', error);
     }
 });
+
+// Eventos para carregar o resumo quando o botão "Ver Resumo" for clicado.
+elements.resumoButtonBR.addEventListener('click', () => carregarResumo('pt-BR'));
+elements.resumoButtonUS.addEventListener('click', () => carregarResumo('en-US'));
+elements.resumoButtonES.addEventListener('click', () => carregarResumo('es-ES'));

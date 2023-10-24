@@ -20,10 +20,14 @@ const elements = {
     resumoButtonUS: document.getElementById('resumo-en-US'),
     resumoButtonES: document.getElementById('resumo-es-ES'),
     resumoText: document.getElementById('resume-text'),
+    titleText: document.getElementById('title-text')
 };
 
 // Carregar video a partir do retorno da api
 async function loadVideo(videoElement) {
+    // Inserir titulo do video
+    elements.resumoText.innerHTML = api_return.name;
+
     const sourceElement = document.createElement('source');
     sourceElement.src = api_return.url;
     sourceElement.type = 'video/mp4';

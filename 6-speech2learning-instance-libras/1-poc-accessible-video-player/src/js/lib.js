@@ -53,7 +53,15 @@ function carregarResumo(idioma) {
     fetch(url_base+`/api/videos/${api_return.id}/transcript/${idioma}.txt`)
         .then((response) => response.text())
         .then((resumo) => {
-        elements.resumoText.innerHTML = resumo;
+            // Dividir o texto em parágrafos com base nas quebras de linha
+            const paragrafos = resumo.split('\n');
+
+            // Adicionar cada parágrafo como um elemento <p>
+            paragrafos.forEach(paragrafo => {
+                const pElement = document.createElement('p');
+                pElement.textContent = paragrafo;
+                elements.resumoText.appendChild(pElement);
+            });
         })
         .catch((error) => {
         console.error(`Erro ao carregar resumo em ${idioma}:`, error);

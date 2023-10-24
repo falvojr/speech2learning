@@ -65,10 +65,11 @@ video{
 
 /* Estilo para o contêiner dos botões de idioma */
 #idioma-buttons-container {
-background-color: #000; /* Cor de fundo preto */
+background-color: #0000003a; /* Cor de fundo preto */
 display: flex; /* Exibe os botões em uma linha */
 justify-content: center; /* Centraliza os botões horizontalmente */
 padding: 10px; /* Espaçamento interno para os botões */
+border-radius: 12px;
 }
 
 /* Estilo para os botões de idioma */

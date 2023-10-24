@@ -65,7 +65,7 @@
 
 /* Estilo para o contêiner dos botões de idioma */
 #idioma-buttons-container {
-  background-color: #0000003a; /* Cor de fundo preto */
+  background-color: #0099cc31; /* Cor de fundo preto */
   display: flex; /* Exibe os botões em uma linha */
   justify-content: center; /* Centraliza os botões horizontalmente */
   padding: 10px; /* Espaçamento interno para os botões */
@@ -74,7 +74,7 @@
 
 /* Estilo para os botões de idioma */
 button.resumo-idioma {
-  background-color: #000; /* Cor de fundo preto */
+  background-color: #00000000; /* Cor de fundo preto */
   border: none;
   padding: 10px; /* Espaçamento interno para os botões */
   cursor: pointer;

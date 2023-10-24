@@ -26,7 +26,7 @@ const elements = {
 // Carregar video a partir do retorno da api
 async function loadVideo(videoElement) {
     // Inserir titulo do video
-    elements.resumoText.innerHTML = api_return.name;
+    elements.titleText.innerHTML = api_return.name;
 
     const sourceElement = document.createElement('source');
     sourceElement.src = api_return.url;

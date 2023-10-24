@@ -63,6 +63,10 @@
     border-radius: 16px;
   }
 
+  .resume-text {
+    color: #465f96;
+  }
+
 /* Estilo para o contêiner dos botões de idioma */
 #idioma-buttons-container {
   background-color: #0099cc31; /* Cor de fundo preto */

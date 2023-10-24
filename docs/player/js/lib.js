@@ -56,6 +56,9 @@ function carregarResumo(idioma) {
             // Dividir o texto em parágrafos com base nas quebras de linha
             const paragrafos = resumo.split('\n');
 
+            // Limpar o conteúdo existente caso troque de idioma
+            elements.resumoText.innerHTML = '';
+
             // Adicionar cada parágrafo como um elemento <p>
             paragrafos.forEach(paragrafo => {
                 const pElement = document.createElement('p');

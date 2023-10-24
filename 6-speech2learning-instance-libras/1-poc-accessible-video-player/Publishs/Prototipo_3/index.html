@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resumo do Vídeo</title>
+  <link rel="stylesheet" href="./styles-index.css">
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <h3>PROTÓTIPO</h3>
+
+  <!-- Botão para carregar dados da API -->
+  <button id="get-api-button">GET API</button>
+
+  <!-- Player de vídeo -->
+  <video id="video-iframe" controls>
+    <source type="video/mp4">
+    <track kind="subtitles" label="Português" src="URL_DA_LEGENDA_PT.vtt" srclang="pt-BR" default>
+    <track kind="subtitles" label="Inglês" src="URL_DA_LEGENDA_EN.vtt" srclang="en-US">
+    <!-- Outros idiomas e legendas podem ser adicionados da mesma maneira -->
+    Seu navegador não suporta o elemento de vídeo.
+  </video>
+  
+
+  <!-- Botão para ver o resumo -->
+  <button id="resumo-button" style="display: none;">Ver Resumo</button>
+
+  <!-- Div para exibir o resumo -->
+  <div id="resumo-div" style="display: none;">
+    <p>
+      <strong>Importante:</strong> Para acessar o conteúdo em Libras, toque no ícone: <img src="./icon/access_icon.svg" width="25px" height="25px" />
+    </p>
+    <h4>SELECIONE O IDIOMA DE TRANSCRIÇÃO.</h4>
+
+    <!-- Botões de idioma -->
+    <div id="idioma-buttons-container">
+      <button id="resumo-pt-BR" class="resumo-idioma">
+        <img src="./icon/pt-br.png" alt="Bandeira do Português (BR)">
+      </button>
+      <button id="resumo-en-US" class="resumo-idioma">
+        <img src="./icon/en-us.png" alt="Bandeira do Inglês (US)">
+      </button>
+      <button id="resumo-es-ES" class="resumo-idioma">
+        <img src="./icon/es-es.png" alt="Bandeira do Espanhol (ES)">
+      </button>
+    </div>
+
+    <!-- Texto do resumo -->
+    <p id="resumo-text"></p>
+
+    <!-- Espaço em branco para botão de PDF não sobrepor texto-->
+    <br><br>
+  
+    <!-- Botão de exportação para PDF -->
+    <button id="export-pdf">
+      EXPORTAR PDF
+      <img src="./icon/PDF_icon.svg" width="25px" height="25px" alt="Exportar para PDF" />
+    </button>
+        
+    <!-- Ícone do VLibras para acessibilidade -->
+    <div vw class="enabled vlibras-icon">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+  </div>
+
+  <!-- Div para exibir os dados da API -->
+  <div id="api-data" style="display: none;"></div>
+
+  <!-- Div para espaço em branco -->
+  <div id="height-400"></div>
+
+  <!-- Sripts em JS para manipular aplicação -->
+  <script src="./script-api.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+/* Criar aqui um sumário ou cabeçlho */
+/* Esse arquivo contém as estilizações gerais*/
+
+* {
+    box-sizing: border-box;
+  }
+
+
+.header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    color: #4785FF;
+    padding: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+  
+  .menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu li {
+    padding: 8px;
+    margin-bottom: 7px;
+    background-color: #FFFFFF;
+    color: #4785FF;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+  
+  .menu li:hover {
+    background-color: #0099cc;
+  }
+
+  
+  .aside {
+    background-color: #FFFFFF;
+    padding: 15px;
+    color: #B8CFFF;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+  }
+  
+  .footer {
+    position: fixed;
+    background-color: #0099cc;
+    color: #ffffff;
+    text-align: center;
+    font-size: 12px;
+    padding: 10px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  video{
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+  }

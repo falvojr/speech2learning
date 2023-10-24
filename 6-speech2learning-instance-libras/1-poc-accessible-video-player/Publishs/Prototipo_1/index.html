@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resumo do Vídeo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start; /* Alinhar elementos no topo da tela */
+      min-height: 100vh; /* Para garantir que o conteúdo ocupe pelo menos a altura da tela */
+    }
+
+    #video-iframe {
+      width: 560px;
+      height: 315px;
+      border: none;
+    }
+
+    h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    #resumo-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    #resumo-div {
+      position: relative; /* Adicionado para posicionamento relativo */
+      display: none;
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #ffeb3b;
+      border-radius: 5px;
+    }
+
+    #resumo-text {
+      margin-top: 10px;
+    }
+
+    /* Estilos para o ícone do VLibras */
+    .vlibras-icon {
+      position: absolute;
+      top: 10px; /* Ajuste a posição vertical conforme necessário */
+      right: 10px; /* Ajuste a posição horizontal conforme necessário */
+    }
+
+    /* Estilos para o ícone de exportação PDF */
+    #export-pdf {
+      position: absolute;
+      bottom: 10px; /* Ajuste a posição vertical conforme necessário */
+      right: 10px; /* Ajuste a posição horizontal conforme necessário */
+      cursor: pointer;
+    }
+
+    #export-pdf {
+      background-color: #007bff; /* Cor de fundo do botão */
+      color: #fff; /* Cor do texto */
+      border: none; /* Remove a borda padrão do botão */
+      padding: 5px 10px; /* Espaçamento interno */
+      border-radius: 5px; /* Cantos arredondados */
+      cursor: pointer; /* Cursor de mão ao passar o mouse */
+      font-size: 16px; /* Tamanho da fonte */
+      display: flex; /* Para alinhar o ícone e o texto horizontalmente */
+      align-items: center; /* Alinhar itens verticalmente ao centro */
+      justify-content: center; /* Alinhar itens horizontalmente ao centro */
+      transition: background-color 0.3s ease; /* Transição suave da cor de fundo */
+    }
+
+    /* Estilos quando o mouse passa sobre o botão */
+    #export-pdf:hover {
+      background-color: #0056b3; /* Cor de fundo mais escura */
+    }
+
+    /* Estilos para o ícone dentro do botão */
+    #export-pdf img {
+      margin-left: 5px; /* Espaço entre o texto e o ícone */
+    }
+
+    p img {
+      vertical-align: middle; /* Alinhar verticalmente ao meio */
+      margin-left: 5px; /* Espaço à esquerda do ícone */
+    }
+
+    #height-400 {
+        height: 400px;
+    }
+
+    /* Estilos para telas menores */
+    @media (max-width: 768px) {
+        h3 {
+            font-size: 20px;
+        }
+
+        #video-iframe {
+            max-width: 100%; /* Tornar o vídeo responsivo */
+            width: auto;
+            height: auto;
+            border: none;
+        }
+
+        #resumo-button {
+            margin-top: 10px;
+        }
+
+        #resumo-div {
+            margin-top: 10px;
+        }
+    }
+  </style>
+</head>
+<body>
+  <h3>PROTÓTIPO</h3>
+  <iframe id="video-iframe" src="https://www.youtube.com/embed/v0YEaeIClKY?si=R9y_9FPfeWLYu6II" frameborder="0" allowfullscreen></iframe>
+  <button id="resumo-button">Ver Resumo</button>
+  <div id="resumo-div" style="display: none;">
+    <p>
+      <strong>Importante:</strong> Para acessar o conteúdo em Libras, toque no ícone: <img src="./access_icon.svg" width="25px" height="25px" />
+    </p>
+    <p id="resumo-text">
+      Este é um resumo do vídeo que você assistiu. Aqui estão alguns pontos-chave do vídeo:
+      <br> <br>
+      - A; <br>
+      - B; <br>
+      - C; <br>
+      - D; <br>
+      - E; <br>
+      - F; <br>
+    </p>
+  
+    <!-- Ícone de exportação PDF -->
+    <button id="export-pdf">
+      EXPORTAR PDF
+      <img src="./PDF_icon.svg" width="25px" height="25px" alt="Exportar para PDF" />
+    </button>
+    
+    <!-- Ícone do VLibras -->
+    <div vw class="enabled vlibras-icon">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+  </div>
+  
+
+  <div id="height-400"></div>
+
+  <script>
+    const resumoButton = document.getElementById('resumo-button');
+    const resumoDiv = document.getElementById('resumo-div');
+    const exportPdfButton = document.getElementById('export-pdf');
+
+    // Função para abrir modal de resumo
+    resumoButton.addEventListener('click', () => {
+      if (resumoDiv.style.display === 'none') {
+        resumoDiv.style.display = 'block';
+      } else {
+        resumoDiv.style.display = 'none';
+      }
+    });
+
+    // Função para exportar o conteúdo da div para PDF
+    exportPdfButton.addEventListener('click', () => {
+      window.alert('Clicou em fazer Download PDF!')
+    });
+
+  </script>
+</body>
+</html>

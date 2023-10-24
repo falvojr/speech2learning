@@ -1,0 +1,41 @@
+{
+    "id": "507f1f77bcf86cd799439011",
+    "name": "Revolução das IAs Generativas",
+    "url": "https://falvojr.github.io/speech2learning/player/videos/507f1f77bcf86cd799439011/main.mp4",
+    "language": "pt-BR",
+    "metadata": {
+      "availableLanguages": [
+        "pt-BR",
+        "en-US",
+        "es-ES"
+      ],
+      "subtitles": [
+        {
+          "language": "pt-BR",
+          "url": "https://falvojr.github.io/speech2learning/player/videos/507f1f77bcf86cd799439011/subtitle/pt-BR.vtt"
+        },
+        {
+          "language": "en-US",
+          "url": "https://falvojr.github.io/speech2learning/player/videos/507f1f77bcf86cd799439011/subtitle/en-US.vtt"
+        },
+        {
+          "language": "es-ES",
+          "url": "https://falvojr.github.io/speech2learning/player/videos/507f1f77bcf86cd799439011/subtitle/es-ES.vtt"
+        }
+      ],
+      "transcripts": [
+        {
+          "language": "pt-BR",
+          "url": "https://falvojr.github.io/speech2learning/player/videos/507f1f77bcf86cd799439011/transcript/pt-BR.txt"
+        },
+        {
+          "language": "en-US",
+          "url": "https://falvojr.github.io/speech2learning/player/videos/507f1f77bcf86cd799439011/transcript/en-US.txt"
+        },
+        {
+          "language": "es-ES",
+          "url": "https://falvojr.github.io/speech2learning/player/videos/507f1f77bcf86cd799439011/transcript/es-ES.txt"
+        }
+      ]
+    }
+  }

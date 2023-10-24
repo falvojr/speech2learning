@@ -24,3 +24,46 @@ O termo *Clean Architecture* foi cunhado por Robert Martin (Uncle Bob) em 2012
 Todas essas iniciativas compartilham a ideia de separar o código em camadas independentes e ter o domínio no centro da arquitetura, permitindo a criação de sistemas altamente testáveis, independentes de tecnologia e adaptáveis às necessidades específicas de um projeto. Embora a *Clean Architecture* tenha uma estrutura geral definida por Robert Martin, é importante lembrar que ela possui flexibilidade e adaptabilidade como algumas de suas principais características. É possível, por exemplo, adicionar novas camadas, ajustar as responsabilidades, modificar a granularidade dos componentes da arquitetura e até mesmo introduzir novas tecnologias ou padrões. 
 
 Tais características, aliadas à grande aceitação da *Clean Architecture* na indústria, sugerem uma referência sólida e confiável para abordarmos os gaps identificados em nosso MS, visando potencializar a criação de soluções educacionais flexíveis e modulares, com foco em reúso e independência de tecnologia. Nesse contexto, propomos a Arquitetura Speech2Learning, uma adaptação da *Clean Architecture* que mantém todas as suas características intrínsecas, mas formaliza aspectos importantes para a acessibilidade de objetos de aprendizagem audíveis. Com isso, nossa intenção é definir uma estrutura que favoreça a construção de soluções educacionais acessíveis, as quais podem beneficiar aprendizes surdos através de transcrições interpretadas por avatares de línguas de sinais, por exemplo.
+
+```mermaid
+graph RL;
+  subgraph layer-infra[Infraestrutura];
+    Web(Web) --> Con
+    Dis(Dispositivos) --> Con
+    UI("Interface do Usuário (UI)") <--> Pre
+    BD(Bancos de Dados) <--> Gat
+    EXT(Integrações Externas) <--> Gat
+
+    subgraph layer-adpaters[Adaptadores];
+      Con(Controllers) --> UC
+      Pre(Presenters) <--> UC
+      Gat(Gateways) -...-> |implementam| IGat
+
+      subgraph layer-app[Aplicação];
+        UC(Casos de Uso) <--> OA
+        UC <--> IGat
+
+        subgraph layer-entities[Entidades];
+          OA("Objetos de Aprendizagem (OA)")
+          OA -.- |contemplam| OAA(OA Audíveis)
+          OAA -.- |possuem| Meta(Metadados)
+          IGat(Interfaces de Gateways)
+          IGat -.- |contemplam| IRep(Interfaces de Repositórios)
+          IGat -.- |contemplam| IS2T(Interfaces de Reconhecimento de Fala)
+        end
+     end
+    end
+  end
+
+classDef infra fill:#a3c9ff,stroke:#00315c,color:#00315c;
+classDef adapters fill:#67dbb1,stroke:#003828,color:#003828;
+classDef ucs fill:#ffb1c1,stroke:#5f112b,color:#5f112b;
+classDef entities fill:#e2c54b,stroke:#3a3000,color:#3a3000;
+classDef entities_secondary fill:#fff0c0,stroke:#3a3000,color:#3a3000,stroke-dasharray: 4 4;
+
+class Web,Dis,UI,BD,EXT infra;
+class Con,Gat,Pre adapters;
+class UC ucs;
+class OA,IGat entities;
+class OAA,Meta,IRep,IS2T entities_secondary;
+```

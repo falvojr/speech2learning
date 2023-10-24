@@ -12,27 +12,27 @@ Mais do que um avanço tecnológico, este projeto é um compromisso com a quebra
 
 ## Experimento
 
-### Fase 1: Experimento Piloto
+## Fase 1: Experimento Piloto
 
-#### 1. Objetivo
+### 1. Objetivo
 
 Estabelecer a viabilidade do experimento, obter insights sobre o design acessível do player e avaliar a preferência entre VLibras e Hand Talks.
 
-#### 2. Questões de Pesquisa
+### 2. Questões de Pesquisa
 
 - Q1: Qual avatar (VLibras ou Hand Talks) é preferido pela comunidade surda?
 - Q2: Existem problemas ou sugestões relacionadas ao design acessível do player?
 
-#### 3. Variáveis
+### 3. Variáveis
 
 - Variável independente: O tipo de avatar (VLibras ou Hand Talks).
 - Variável dependente: Preferência do usuário, feedback sobre o design acessível.
 
-#### 4. Desenho do Experimento
+### 4. Desenho do Experimento
 
 Desenho de within-subjects, onde cada participante experimentará ambos os avatares.
 
-#### 5. Procedimento
+### 5. Procedimento
 
 1. Recrutamento de participantes.
 2. Treinamento sobre o uso do player.
@@ -42,36 +42,36 @@ Desenho de within-subjects, onde cada participante experimentará ambos os avata
 6. Feedback coletado.
 7. Comparação e análise.
 
-#### 6. Análise de Dados
+### 6. Análise de Dados
 
 - Dados qualitativos: Análise temática ou análise de conteúdo.
 - Dados quantitativos: Testes estatísticos, como Teste t de Student.
 
-#### 7. Considerações
+### 7. Considerações
 
 Sugerindo 10-15 participantes para um piloto.
 
-### Fase 2: Experimento Principal
+## Fase 2: Experimento Principal
 
-#### 1. Objetivo
+### 1. Objetivo
 
 Avaliar a eficácia, eficiência e satisfação do usuário ao usar o Player de Vídeo com features acessíveis.
 
-#### 2. Questões de Pesquisa
+### 2. Questões de Pesquisa
 
 - Q1: O Player de Vídeo atende às necessidades da comunidade surda?
 - Q2: Qual é o nível de satisfação ao interagir com as features do Player?
 
-#### 3. Variáveis
+### 3. Variáveis
 
 - Variável independente: Features do Player de Vídeo.
 - Variável dependente: Satisfação do usuário, eficácia e eficiência do player.
 
-#### 4. Desenho do Experimento
+### 4. Desenho do Experimento
 
 Design between-subjects.
 
-#### 5. Procedimento
+### 5. Procedimento
 
 1. Recrutamento.
 2. Treinamento.
@@ -80,11 +80,11 @@ Design between-subjects.
 5. Coleta de feedback e métricas.
 6. Análise.
 
-#### 6. Análise de Dados
+### 6. Análise de Dados
 
 - Dados qualitativos: Análise temática ou análise de conteúdo.
 - Dados quantitativos: ANOVA.
 
-#### 7. Considerações
+### 7. Considerações
 
 Sugerindo 20-30 participantes por grupo.

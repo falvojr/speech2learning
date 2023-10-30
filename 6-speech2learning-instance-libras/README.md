@@ -13,14 +13,14 @@ Mais do que um avanço tecnológico, este projeto é um compromisso com a quebra
 
 ```mermaid
 sequenceDiagram
-    box Projeto de IC
-    actor Surdo
+    box transparent Projeto de Iniciação Científica
+    actor Surdo as Usuário da Libras
     participant PlayerDeVideo as Player de Video
     end
-    participant Speech2Learning as Speech2Learning API
+    participant Speech2Learning as API REST (Speech2Learning)
     participant AvatarDeLibras as Avatar de Libras
 
-    Surdo->>PlayerDeVideo: Solicita um vídeo específico
+    Surdo->>PlayerDeVideo: Solicita a visualização de um vídeo
     activate PlayerDeVideo
 
     PlayerDeVideo->>Speech2Learning: GET /videos/{id}
@@ -28,16 +28,16 @@ sequenceDiagram
     Speech2Learning-->>PlayerDeVideo: Vídeo + metadados (transcrições, legendas etc)
     deactivate Speech2Learning
 
-    PlayerDeVideo-->>Surdo: Carrega o vídeo e seus respectivos metadados
+    PlayerDeVideo-->>Surdo: Apresenta o vídeo e seus metadados
 
     deactivate PlayerDeVideo
     
-    loop Interação com a Transcrição via UI do Player de Vídeo Acessível
+    loop Interagir com a Transcrição do Player de Vídeo Usando o Avatar de Libras
         Surdo->>PlayerDeVideo: Seleciona um texto para sinalização em Libras 
         activate PlayerDeVideo
-        PlayerDeVideo->>AvatarDeLibras: Solicita conversão do texto para Libras
+        PlayerDeVideo->>AvatarDeLibras: Solicita a sinalização do texto em Libras
         activate AvatarDeLibras
-        AvatarDeLibras-->>PlayerDeVideo: Retorna o texto traduzido em Libras
+        AvatarDeLibras-->>PlayerDeVideo: Retorna a sinalização do texto em Libras
         deactivate AvatarDeLibras
         PlayerDeVideo-->>Surdo: Avatar sinaliza o texto selecionado em Libras
     end

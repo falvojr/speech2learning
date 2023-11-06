@@ -10,6 +10,41 @@ Esta PoC representa um marco fundamental para a **_Speech2Learning_**, pois esta
 
 Mais do que um avanço tecnológico, este projeto é um compromisso com a quebra de barreiras, a promoção da inclusão e a democratização do acesso à educação, independentemente das habilidades auditivas dos indivíduos. A participação dos alunos de iniciação científica [@driicarvalho7](https://github.com/driicarvalho7) e [@motoki-yo](https://github.com/motoki-yo) tem sido imprescindível, trazendo perspectivas únicas e enriquecedoras para o desenvolvimento do projeto.
 
+
+```mermaid
+sequenceDiagram
+    box transparent Projeto de Iniciação Científica
+    actor Surdo as Usuário da Libras
+    participant PlayerDeVideo as Player de Video
+    end
+    participant Speech2Learning as API REST (Speech2Learning)
+    participant AvatarDeLibras as Avatar de Libras
+
+    Surdo->>PlayerDeVideo: Solicita a visualização de um vídeo
+    activate PlayerDeVideo
+
+    PlayerDeVideo->>Speech2Learning: GET /videos/{id}
+    activate Speech2Learning
+    Speech2Learning-->>PlayerDeVideo: Vídeo + metadados (transcrições, legendas etc)
+    deactivate Speech2Learning
+
+    PlayerDeVideo-->>Surdo: Apresenta o vídeo e seus metadados
+
+    deactivate PlayerDeVideo
+    
+    loop Interagir com a Transcrição do Player de Vídeo Usando o Avatar de Libras
+        Surdo->>PlayerDeVideo: Seleciona um texto para sinalização em Libras 
+        activate PlayerDeVideo
+        PlayerDeVideo->>AvatarDeLibras: Solicita a sinalização do texto em Libras
+        activate AvatarDeLibras
+        AvatarDeLibras-->>PlayerDeVideo: Retorna a sinalização do texto em Libras
+        deactivate AvatarDeLibras
+        PlayerDeVideo-->>Surdo: Avatar sinaliza o texto selecionado em Libras
+    end
+
+    deactivate PlayerDeVideo
+```
+
 ## Experimento
 
 ### Fase 1: Experimento Piloto

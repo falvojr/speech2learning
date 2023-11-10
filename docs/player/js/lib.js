@@ -20,13 +20,15 @@ const elements = {
     resumoButtonUS: document.getElementById('resumo-en-US'),
     resumoButtonES: document.getElementById('resumo-es-ES'),
     resumoText: document.getElementById('resume-text'),
-    titleText: document.getElementById('title-text')
+    titleText: document.getElementById('title-text'),
+    descriptionText: document.getElementById('description-text')
 };
 
 // Carregar video a partir do retorno da api
 async function loadVideo(videoElement) {
-    // Inserir titulo do video
+    // Inserir titulo e descrição do video
     elements.titleText.innerHTML = api_return.name;
+    elements.descriptionText.innerHTML = api_return.description;
 
     const sourceElement = document.createElement('source');
     sourceElement.src = api_return.url;

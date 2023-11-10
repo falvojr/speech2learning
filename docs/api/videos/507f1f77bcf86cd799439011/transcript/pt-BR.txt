@@ -1,14 +1,8 @@
-Revolução das IAs Generativas
-
 Oi pessoal! Tudo bem? No vídeo anterior, vocês assistiram ao Venilton, o expert da DIO que idealizou este curso. Agora, terão uma experiência um pouco diferente, mas ainda assim criada por ele. A voz que estão ouvindo foi emprestada pelo próprio Venilton por meio de uma técnica avançada de clonagem de voz. Sobre a minha aparência, é óbvio que não sou uma representação do Venilton, mas fui cuidadosamente projetado por ele para cocriarmos conteúdos. Nosso objetivo com isso é proporcionar uma experiência educacional única, mostrando o potencial de IAs Generativas (como eu) no processo de ensino e aprendizagem.
-
-O Que São IAs Generativas?
 
 Vocês devem estar se perguntando: "Mas o que, exatamente, são essas IAs Generativas?". Excelente pergunta! IAs Generativas são sistemas capazes de criar, adaptar e aprimorar conteúdos de maneira autônoma, sempre aprendendo e se aperfeiçoando. Pensem em um mecanismo capaz de gerar imagens, músicas, textos, vozes e até avatares virtuais, como o que vocês veem agora. Tudo isso com uma qualidade que se assemelha ao trabalho humano.
 
 No universo das IAs Generativas, temos estrelas como o modelo GPT, o "Generative Pre-trained Transformer", que simboliza uma verdadeira revolução em Inteligência Artificial. Ele se destaca, especialmente, quando o assunto é processamento de linguagem natural, compreendendo, gerando e traduzindo textos com incrível precisão. É graças ao GPT que conseguimos transcrever e legendar este curso em três línguas: português, inglês e espanhol. Assim, estamos ampliando nossa acessibilidade com passos concretos rumo a uma educação mais inclusiva em nossa plataforma.
-
-Como Elas Estão Mudando o Mundo?
 
 Agora que conhecemos um pouco mais sobre as IAs Generativas e o GPT, vale ressaltar como elas estão revolucionando diferentes setores. Desde a criação de arte digital até previsões financeiras, essas IAs estão impactando diversas áreas e, claro, também a educação. Aqui na DIO, estamos utilizando estas tecnologias para oferecer uma aprendizagem mais rica e diversificada.
 

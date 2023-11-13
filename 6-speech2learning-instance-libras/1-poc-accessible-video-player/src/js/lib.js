@@ -37,6 +37,7 @@ function toggleBtnShowResumeVisibility() {
 // Função para ocultar a transcrição e o botão 'btn-show-resume'
 function hideTranscription() {
     elements.resumoText.innerHTML = ''; // Limpar o conteúdo da transcrição
+    
     elements.btnShowResume.style.display = 'none'; // Ocultar o botão 'btn-show-resume'
 }
 

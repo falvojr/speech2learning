@@ -83,6 +83,8 @@ function carregarResumo(idioma) {
                 pElement.textContent = paragrafo;
                 elements.resumoText.appendChild(pElement);
             });
+
+            toggleBtnShowResumeVisibility();
         })
         .catch((error) => {
         console.error(`Erro ao carregar resumo em ${idioma}:`, error);
@@ -115,6 +117,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 // Eventos para carregar o resumo quando o botão "Ver Resumo" for clicado.
 elements.btnShowResume.addEventListener('click', () => {hideTranscription(); toggleBtnShowResumeVisibility();});
-elements.resumoButtonBR.addEventListener('click', () => {carregarResumo('pt-BR'); toggleBtnShowResumeVisibility();});
-elements.resumoButtonUS.addEventListener('click', () => {carregarResumo('en-US'); toggleBtnShowResumeVisibility();});
-elements.resumoButtonES.addEventListener('click', () => {carregarResumo('es-ES'); toggleBtnShowResumeVisibility();});
+elements.resumoButtonBR.addEventListener('click', () => {carregarResumo('pt-BR')});
+elements.resumoButtonUS.addEventListener('click', () => {carregarResumo('en-US')});
+elements.resumoButtonES.addEventListener('click', () => {carregarResumo('es-ES')});

@@ -21,8 +21,24 @@ const elements = {
     resumoButtonES: document.getElementById('resumo-es-ES'),
     resumoText: document.getElementById('resume-text'),
     titleText: document.getElementById('title-text'),
-    descriptionText: document.getElementById('description-text')
+    descriptionText: document.getElementById('description-text'),
+    btnShowResume: document.getElementById('btn-show-resume')
 };
+
+// Função para exibir ou ocultar o botão 'btn-show-resume' com base na transcrição selecionada
+function toggleBtnShowResumeVisibility() {
+    // Verificar se há texto na transcrição
+    const hasTranscription = elements.resumoText.textContent.trim().length > 0;
+
+    // Exibir ou ocultar o botão com base na presença de transcrição
+    elements.btnShowResume.style.display = hasTranscription ? 'block' : 'none';
+}
+
+// Função para ocultar a transcrição e o botão 'btn-show-resume'
+function hideTranscription() {
+    elements.resumoText.innerHTML = ''; // Limpar o conteúdo da transcrição
+    btnShowResume.style.display = 'none'; // Ocultar o botão 'btn-show-resume'
+}
 
 // Carregar video a partir do retorno da api
 async function loadVideo(videoElement) {
@@ -89,12 +105,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Carregar as legendas
         await loadSubtitles(videoElement);
         
+        // Ocultar botão transcrição
+        elements.btnShowResume.style.display = 'none';
+        
     } catch (error) {
         console.error('There has been a problem with your fetch operation:', error);
     }
 });
 
 // Eventos para carregar o resumo quando o botão "Ver Resumo" for clicado.
-elements.resumoButtonBR.addEventListener('click', () => carregarResumo('pt-BR'));
-elements.resumoButtonUS.addEventListener('click', () => carregarResumo('en-US'));
-elements.resumoButtonES.addEventListener('click', () => carregarResumo('es-ES'));
+elements.btnShowResume.addEventListener('click', () => {hideTranscription(); toggleBtnShowResumeVisibility();});
+elements.resumoButtonBR.addEventListener('click', () => {carregarResumo('pt-BR'); toggleBtnShowResumeVisibility();});
+elements.resumoButtonUS.addEventListener('click', () => {carregarResumo('en-US'); toggleBtnShowResumeVisibility();});
+elements.resumoButtonES.addEventListener('click', () => {carregarResumo('es-ES'); toggleBtnShowResumeVisibility();});

@@ -96,3 +96,13 @@ button.resumo-idioma span {
   font-size: 16px; /* Ajuste o tamanho da fonte conforme necessário */
   color: #fff; /* Cor do texto (branco) */
 }
+
+button.ocultar-resumo {
+  background-color: #4785FF;
+  color: #ffffff;
+}
+
+button.ocultar-resumo :hover{
+  background-color: #0099cc;
+  color: #b3b3b3;
+}

@@ -1,21 +1,54 @@
 /* Criar aqui um sumário ou cabeçlho */
 /* Esse arquivo contém as estilizações gerais*/
 
-* {
-    box-sizing: border-box;
-  }
+.bg{
+  background-color: #F0F5FF;
+}
 
+.bg.dark{
+  background-color: #000000;
+}
 
-.header {
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #FFFFFF;
-    color: #4785FF;
-    padding: 10px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  }
-  
+.border-btn{
+font-size: 12px;
+padding: 6px;
+min-width: 160px;
+min-height: 48px;
+border-radius: 24px;
+border: 3px solid var(--Primary, #4785FF);
+color: #4785FF;
+background-color: transparent;
+font-weight: bold;
+
+transition: all .2s ease-in-out;
+}
+
+.border-btn:hover{
+transform: scale(1.05);
+cursor: pointer;
+background-color: #4785FF;
+color: #FFF;
+}
+
+.toggle-theme{
+border: 3px solid var(--Primary, black);
+color: black;
+}
+
+.toggle-theme:hover{
+background-color: black;
+}
+
+.toggle-theme.dark{
+  border: 3px solid var(--Primary, white);
+  color: white;  
+}
+
+.toggle-theme.dark:hover{
+  background-color: white;
+  color: black;
+}
+
   .menu ul {
     list-style-type: none;
     margin: 0;
@@ -47,6 +80,11 @@
     padding: 3vw
   }
 
+  .aside.dark, .bottom.dark{
+    background-color: #36393E;
+    color: #fff;
+  }
+
   .text-area{
     max-height: 41.4vh;
     margin-bottom: 4vh;
@@ -54,18 +92,6 @@
   }
   .bottom{
     margin-top: 4vh;
-  }
-  
-  .footer {
-    position: fixed;
-    background-color: #0099cc;
-    color: #ffffff;
-    text-align: center;
-    font-size: 12px;
-    padding: 10px;
-    bottom: 0;
-    left: 0;
-    width: 100%;
   }
 
   video{
@@ -135,13 +161,3 @@ button.resumo-idioma span {
   background: #4785FF; /* Different color for the third controller */
 }
 
-
-.custom-div {
-  width: calc(100% - 20px); /* Ajuste conforme necessário */
-  margin-top: 20px; /* Ajuste conforme necessário */
-  background-color: #ffffff; /* Cor de fundo desejada */
-  border: 1px solid #ccc; /* Borda desejada */
-  border-radius: 8px; /* Raio da borda */
-  padding: 15px; /* Espaçamento interno */
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* Sombra desejada */
-}

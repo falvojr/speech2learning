@@ -4,36 +4,6 @@
 body{
   padding: 2vw;
 }
-
-.bg-baby-blue{
-    background-color: #F0F5FF;
-}
-
-.bg-dark{
-    background-color: #000000;
-}
-
-.border-btn{
-  font-size: 12px;
-  padding: 6px;
-  min-width: 160px;
-  min-height: 48px;
-  border-radius: 24px;
-  border: 3px solid var(--Primary, #4785FF);
-  color: #4785FF;
-  background-color: transparent;
-  font-weight: bold;
-
-  transition: all .2s ease-in-out;
-}
-
-.border-btn:hover{
-  transform: scale(1.05);
-  cursor: pointer;
-  background-color: #4785FF;
-  color: #FFF;
-}
-
 /* For mobile phones: */
 [class*="col-"] {
     width: 100%;
@@ -75,6 +45,10 @@ body{
     padding: 10px;
   }
   
+* {
+  box-sizing: border-box;
+}
+
   * {
     font-family: "Open Sans", sans-serif;
     font-style: normal;

@@ -9,7 +9,12 @@
     <link rel="stylesheet" href="./css/lib.css">
 </head>
 
-<body class="bg-baby-blue">
+<body class="bg">
+
+    <div class="col-12">
+        <button class="border-btn toggle-theme" onclick="toggleContrast()">Contraste</button>
+    </div>
+    
 
     <div class="col-7 col-s-8">
         <video id="video" controls preload="metadata"></video>
@@ -59,5 +64,18 @@
     </div>
 
     <script src="js/lib.js"></script>
+    <script>
+        function toggleContrast() {
+            var body = document.body;
 
+            // Adicionar a classe .dark aos elementos específicos
+            var elementsWithDarkClass = document.querySelectorAll('.bg, .aside, .bottom, .toggle-theme');
+
+            elementsWithDarkClass.forEach(function (element) {
+                element.classList.toggle("dark");
+            });
+        }
+
+        // ... (restante do código) ...
+    </script>
 </body>

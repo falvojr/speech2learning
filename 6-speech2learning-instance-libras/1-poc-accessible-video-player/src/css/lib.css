@@ -1,6 +1,10 @@
 /* Criar aqui um sumário ou cabeçlho */
 /* Esse arquivo contém as estilizações do tipo biblioteca, para criar classes comuns e úteis (tipo uma framework)*/
 
+body{
+  padding: 2vw;
+}
+
 .bg-baby-blue{
     background-color: #F0F5FF;
 }

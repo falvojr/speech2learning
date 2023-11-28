@@ -1,14 +1,9 @@
 /* Criar aqui um sumário ou cabeçlho */
 /* Esse arquivo contém as estilizações do tipo biblioteca, para criar classes comuns e úteis (tipo uma framework)*/
 
-.bg-baby-blue{
-    background-color: #F0F5FF;
+body{
+  padding: 2vw;
 }
-
-.bg-dark{
-    background-color: #000000;
-}
-
 /* For mobile phones: */
 [class*="col-"] {
     width: 100%;
@@ -50,7 +45,13 @@
     padding: 10px;
   }
   
-  html {
+* {
+  box-sizing: border-box;
+}
+
+  * {
     font-family: "Open Sans", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 24px */
   }
-  

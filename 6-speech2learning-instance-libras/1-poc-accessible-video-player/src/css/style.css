@@ -142,12 +142,12 @@ button.resumo-idioma span {
   display: flex;
   justify-content: space-between;
   gap: 10px;
-  width: 350px; /* Adjust the width as needed */
+  width: 250px; /* Adjust the width as needed */
 }
 
 .controller {
   width: 82px;
-  height: 16px;
+  height: 26px;
   border-radius: 8px;
   background: #D6E4FF;
   transition: all .2s ease-in-out;

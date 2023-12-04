@@ -67,6 +67,7 @@ async function loadSubtitles(videoElement){
     });
 }
 
+// Função de trocar o contraste da tela
 function toggleContrast() {
     var body = document.body;
 

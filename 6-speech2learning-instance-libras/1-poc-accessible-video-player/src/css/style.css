@@ -153,6 +153,10 @@ button.resumo-idioma span {
   transition: all .2s ease-in-out;
 }
 
+.controller p {
+  margin: 0; /* Remover a margem dos elementos <p> dentro dos botões */
+}
+
 .controller:hover {
   cursor: pointer;
   transform: scale(1.05);
@@ -161,6 +165,7 @@ button.resumo-idioma span {
 /* Adicione uma nova classe para a cor dinâmica */
 .controller.active {
   background: #4785FF;
+  color: #fff;
 }
 
 

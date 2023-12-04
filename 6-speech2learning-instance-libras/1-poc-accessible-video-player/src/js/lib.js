@@ -16,16 +16,13 @@ let api_return = {
 
 // Módulo de elementos da página
 const elements = {
-    resumoButtons: {
-        ptBR: document.getElementById('resumo-pt-BR'),
-        enUS: document.getElementById('resumo-en-US'),
-        esES: document.getElementById('resumo-es-ES')
-    },
+    resumoButtonBR: document.getElementById('resumo-pt-BR'),
+    resumoButtonUS: document.getElementById('resumo-en-US'),
+    resumoButtonES: document.getElementById('resumo-es-ES'),
     resumoText: document.getElementById('resume-text'),
     titleText: document.getElementById('title-text'),
     descriptionText: document.getElementById('description-text'),
-    btnShowResume: document.getElementById('btn-show-resume'),
-    controllers: document.querySelectorAll('.controller')
+    btnShowResume: document.getElementById('btn-show-resume')
 };
 
 // Função para exibir ou ocultar o botão 'btn-show-resume' com base na transcrição selecionada
@@ -82,14 +79,6 @@ function toggleContrast() {
 
 // Carregar o resumo com base no idioma selecionado
 function carregarResumo(idioma) {
-    // Remover a classe 'selected' de todos os botões de controle
-    elements.controllers.forEach(controller => {
-        controller.classList.remove('selected');
-    });
-
-    // Adicionar a classe 'selected' apenas ao botão do idioma selecionado
-    elements.controllers[idMap[idioma]].classList.add('selected');
-
     fetch(url_base+`/api/videos/${api_return.id}/transcript/${idioma}.txt`)
         .then((response) => response.text())
         .then((resumo) => {
@@ -112,13 +101,6 @@ function carregarResumo(idioma) {
         console.error(`Erro ao carregar resumo em ${idioma}:`, error);
         });
 }
-
-// Mapear os IDs dos botões de controle para os idiomas correspondentes
-const idMap = {
-    'pt-BR': 0,
-    'en-US': 1,
-    'es-ES': 2
-};
 
 // Evento para carregar video e legenda ao entrar na página.
 document.addEventListener('DOMContentLoaded', async () => {
@@ -145,19 +127,34 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 // Eventos para carregar o resumo quando o botão "Ver Resumo" for clicado.
-elements.btnShowResume.addEventListener('click', () => {
-    hideTranscription();
-    toggleBtnShowResumeVisibility();
+/*
+elements.btnShowResume.addEventListener('click', () => {hideTranscription(); toggleBtnShowResumeVisibility();});
+elements.resumoButtonBR.addEventListener('click', () => {carregarResumo('pt-BR')});
+elements.resumoButtonUS.addEventListener('click', () => {carregarResumo('en-US')});
+elements.resumoButtonES.addEventListener('click', () => {carregarResumo('es-ES')});
+*/
+
+// Adicione um event listener para cada botão
+document.getElementById('resumo-pt-BR').addEventListener('click', function() {
+    resetControllers(); // Resetar todas as classes
+    this.parentElement.classList.add('active'); // Adicionar classe à linguagem selecionada
 });
 
-elements.resumoButtons.ptBR.addEventListener('click', () => {
-    carregarResumo('pt-BR');
+document.getElementById('resumo-en-US').addEventListener('click', function() {
+    resetControllers();
+    this.parentElement.classList.add('active');
 });
 
-elements.resumoButtons.enUS.addEventListener('click', () => {
-    carregarResumo('en-US');
+document.getElementById('resumo-es-ES').addEventListener('click', function() {
+    resetControllers();
+    this.parentElement.classList.add('active');
 });
 
-elements.resumoButtons.esES.addEventListener('click', () => {
-    carregarResumo('es-ES');
-});
+// Função para resetar todas as classes para a cor padrão
+function resetControllers() {
+    const controllers = document.querySelectorAll('.controller');
+    controllers.forEach(controller => {
+        controller.classList.remove('active');
+    });
+}
+  

@@ -1,0 +1,27 @@
+{
+  "id": "507f1f77bcf86cd799439011",
+  "url": "https://falvojr.github.io/speech2learning/api/videos/507f1f77bcf86cd799439011/main.mp4",
+  "metadata": {
+    "originalLanguage": "pt-BR",
+    "localizations": {
+      "pt-BR": {
+        "name": "Revolução das IAs Generativas",
+        "description": "Bem-vindo à vanguarda da educação e acessibilidade! Este curso inovador irá levá-lo a um mundo fascinante onde a Inteligência Artificial (IA) e a criatividade se unem para criar oportunidades educacionais sem precedentes. No coração desta jornada de aprendizado está um avatar virtual surpreendente, criado por meio das mais avançadas IAs Generativas, com sua voz clonada a partir do nosso expert, Venilton. Esta experiência única promete abrir seus olhos para o vasto potencial das IAs Generativas e como elas podem ser usadas como ferramentas transformadoras em nosso mundo, promovendo acessibilidade e inclusão para todos.",
+        "subtitleUrl": "https://falvojr.github.io/speech2learning/api/videos/507f1f77bcf86cd799439011/subtitle/pt-BR.vtt",
+        "transcriptUrl": "https://falvojr.github.io/speech2learning/api/videos/507f1f77bcf86cd799439011/transcript/pt-BR.txt"
+      },
+      "en-US": {
+        "name": "The Generative AI Revolution",
+        "description": "Welcome to the cutting-edge of education and accessibility! This groundbreaking course takes you into an exciting world where Artificial Intelligence (AI) and creativity merge to forge unprecedented educational opportunities. At the core of this learning journey is a stunning virtual avatar, crafted using the most advanced Generative AIs, with its voice cloned from our expert, Venilton. This unique experience promises to open your eyes to the immense potential of Generative AIs and how they can be leveraged as transformative tools in our world, fostering accessibility and inclusion for all.",
+        "subtitleUrl": "https://falvojr.github.io/speech2learning/api/videos/507f1f77bcf86cd799439011/subtitle/en-US.vtt",
+        "transcriptUrl": "https://falvojr.github.io/speech2learning/api/videos/507f1f77bcf86cd799439011/transcript/en-US.txt"
+      },
+      "es-ES": {
+        "name": "La Revolución de la IA Generativa",
+        "description": "¡Bienvenido a la vanguardia de la educación y la accesibilidad! Este curso pionero te llevará a un mundo fascinante donde la Inteligencia Artificial (IA) y la creatividad se unen para crear oportunidades educativas sin precedentes. En el corazón de este viaje de aprendizaje está un avatar virtual asombroso, creado a través de las IA Generativas más avanzadas, con su voz clonada de nuestro experto, Venilton. Esta experiencia única promete abrir tus ojos al vasto potencial de las IA Generativas y cómo pueden ser utilizadas como herramientas transformadoras en nuestro mundo, promoviendo la accesibilidad y la inclusión para todos.",
+        "subtitleUrl": "https://falvojr.github.io/speech2learning/api/videos/507f1f77bcf86cd799439011/subtitle/es-ES.vtt",
+        "transcriptUrl": "https://falvojr.github.io/speech2learning/api/videos/507f1f77bcf86cd799439011/transcript/es-ES.txt"
+      }
+    }
+  }
+}

@@ -33,13 +33,17 @@
 }
 
 /* Theme toggle styles */
-.toggle-theme {
+.toggle-theme.border-btn {
+  padding: 6px;
+  min-width: 96px;
+  min-height: 32px;
   border: 3px solid var(--Primary, black);
   color: black;
 }
 
 .toggle-theme:hover {
   background-color: black;
+  color: white;
 }
 
 .toggle-theme.dark {
@@ -87,14 +91,16 @@
 }
 
 .text-area {
-  max-height: 41.4vh;
+  max-height: 64.4vh;
   margin-bottom: 4vh;
   overflow-y: scroll;
 }
 
 .bottom {
   margin-top: 4vh;
+  
 }
+
 
 /* Video styles */
 video {
@@ -135,11 +141,22 @@ button.resumo-idioma {
 }
 
 /* Language icon styles */
+/* Language icon styles with added filter for monochromatic effect */
 button.resumo-idioma img {
   width: 24px;
   height: 24px;
   margin-right: 8px;
+  filter: grayscale(100%); /* Monochromatic effect by default */
+  transition: filter 0.3s ease; /* Adding transition for a smooth effect */
 }
+
+/* Language icon styles with filter off on hover */
+button.resumo-idioma:hover img,
+button.resumo-idioma:active img,
+button.resumo-idioma:focus img {
+  filter: grayscale(0%); /* No grayscale effect on hover, click, or focus */
+}
+
 
 /* Language button text styles */
 button.resumo-idioma span {
@@ -147,9 +164,6 @@ button.resumo-idioma span {
   color: #fff;
 }
 
-.resumo-idioma img {
-  filter: grayscale(100%);
-}
 
 /* Carousel controller styles */
 .carousel-controllers {

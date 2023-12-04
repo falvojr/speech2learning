@@ -142,7 +142,7 @@ button.resumo-idioma span {
   display: flex;
   justify-content: space-between;
   gap: 10px;
-  width: 250px; /* Adjust the width as needed */
+  width: 350px; /* Adjust the width as needed */
 }
 
 .controller {

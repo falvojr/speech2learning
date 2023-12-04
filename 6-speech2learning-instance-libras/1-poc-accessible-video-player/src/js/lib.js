@@ -127,25 +127,19 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 // Eventos para carregar o resumo quando o botão "Ver Resumo" for clicado.
-/*
 elements.btnShowResume.addEventListener('click', () => {hideTranscription(); toggleBtnShowResumeVisibility();});
-elements.resumoButtonBR.addEventListener('click', () => {carregarResumo('pt-BR')});
-elements.resumoButtonUS.addEventListener('click', () => {carregarResumo('en-US')});
-elements.resumoButtonES.addEventListener('click', () => {carregarResumo('es-ES')});
-*/
-
-// Adicione um event listener para cada botão
-document.getElementById('resumo-pt-BR').addEventListener('click', function() {
+elements.resumoButtonBR.addEventListener('click', () => {
+    carregarResumo('pt-BR');
     resetControllers(); // Resetar todas as classes
     this.parentElement.classList.add('active'); // Adicionar classe à linguagem selecionada
 });
-
-document.getElementById('resumo-en-US').addEventListener('click', function() {
+elements.resumoButtonUS.addEventListener('click', () => {
+    carregarResumo('en-US');
     resetControllers();
     this.parentElement.classList.add('active');
 });
-
-document.getElementById('resumo-es-ES').addEventListener('click', function() {
+elements.resumoButtonES.addEventListener('click', () => {
+    carregarResumo('es-ES');
     resetControllers();
     this.parentElement.classList.add('active');
 });

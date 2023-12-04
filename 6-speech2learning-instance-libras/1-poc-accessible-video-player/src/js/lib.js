@@ -67,6 +67,18 @@ async function loadSubtitles(videoElement){
     });
 }
 
+function toggleContrast() {
+    var body = document.body;
+
+    // Adicionar a classe .dark aos elementos específicos
+    var elementsWithDarkClass = document.querySelectorAll('.bg, .aside, .bottom, .toggle-theme');
+
+    elementsWithDarkClass.forEach(function (element) {
+        element.classList.toggle("dark");
+    });
+}
+
+
 // Carregar o resumo com base no idioma selecionado
 function carregarResumo(idioma) {
     fetch(url_base+`/api/videos/${api_return.id}/transcript/${idioma}.txt`)

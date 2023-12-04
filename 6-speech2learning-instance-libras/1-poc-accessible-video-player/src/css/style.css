@@ -1,163 +1,185 @@
-/* Criar aqui um sumário ou cabeçlho */
-/* Esse arquivo contém as estilizações gerais*/
+/* ============================
+   General Styles Summary
+   ============================ */
 
-.bg{
+/* Background styles */
+.bg {
   background-color: #F0F5FF;
 }
 
-.bg.dark{
+.bg.dark {
   background-color: #000000;
 }
 
-.border-btn{
-font-size: 12px;
-padding: 6px;
-min-width: 160px;
-min-height: 48px;
-border-radius: 24px;
-border: 3px solid var(--Primary, #4785FF);
-color: #4785FF;
-background-color: transparent;
-font-weight: bold;
-
-transition: all .2s ease-in-out;
+/* Button styles */
+.border-btn {
+  font-size: 12px;
+  padding: 6px;
+  min-width: 160px;
+  min-height: 48px;
+  border-radius: 24px;
+  border: 3px solid var(--Primary, #4785FF);
+  color: #4785FF;
+  background-color: transparent;
+  font-weight: bold;
+  transition: all .2s ease-in-out;
 }
 
-.border-btn:hover{
-transform: scale(1.05);
-cursor: pointer;
-background-color: #4785FF;
-color: #FFF;
+.border-btn:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  background-color: #4785FF;
+  color: #FFF;
 }
 
-.toggle-theme{
-border: 3px solid var(--Primary, black);
-color: black;
+/* Theme toggle styles */
+.toggle-theme {
+  border: 3px solid var(--Primary, black);
+  color: black;
 }
 
-.toggle-theme:hover{
-background-color: black;
+.toggle-theme:hover {
+  background-color: black;
 }
 
-.toggle-theme.dark{
+.toggle-theme.dark {
   border: 3px solid var(--Primary, white);
-  color: white;  
+  color: white;
 }
 
-.toggle-theme.dark:hover{
+.toggle-theme.dark:hover {
   background-color: white;
   color: black;
 }
 
-  .menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .menu li {
-    padding: 8px;
-    margin-bottom: 7px;
-    background-color: #FFFFFF;
-    color: #4785FF;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  }
-  
-  .menu li:hover {
-    background-color: #0099cc;
-  }
+/* Menu styles */
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
-  
-  .aside, .bottom {
-    background-color: #FFFFFF;
-    padding: 15px;
-    font-size: 14px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    border-radius: 16px;
+.menu li {
+  padding: 8px;
+  margin-bottom: 7px;
+  background-color: #FFFFFF;
+  color: #4785FF;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
 
-    /*min-width: 33vw;*/
-    /*min-height: 94vh;*/
-    padding: 3vw
-  }
+.menu li:hover {
+  background-color: #0099cc;
+}
 
-  .aside.dark, .bottom.dark{
-    background-color: #36393E;
-    color: #fff;
-  }
+/* Aside and Bottom styles */
+.aside, .bottom {
+  background-color: #FFFFFF;
+  padding: 15px;
+  font-size: 14px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+  padding: 3vw; /* Adjusted padding */
+}
 
-  .text-area{
-    max-height: 41.4vh;
-    margin-bottom: 4vh;
-    overflow-y: scroll
-  }
-  .bottom{
-    margin-top: 4vh;
-  }
+.aside.dark, .bottom.dark {
+  background-color: #36393E;
+  color: #fff;
+}
 
-  video{
-    width: 100%;
-    height: auto;
-    border-radius: 16px;
-  }
+.text-area {
+  max-height: 41.4vh;
+  margin-bottom: 4vh;
+  overflow-y: scroll;
+}
 
-  .resume-text {
-    color: #465f96;
-  }
+.bottom {
+  margin-top: 4vh;
+}
 
-/* Estilo para o contêiner dos botões de idioma */
+/* Video styles */
+video {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+/* Text styles */
+.resume-text {
+  color: #465f96;
+}
+
+/* Language buttons container styles */
 #idioma-buttons-container {
-  background-color: #0099cc31; /* Cor de fundo preto */
-  display: flex; /* Exibe os botões em uma linha */
-  justify-content: center; /* Centraliza os botões horizontalmente */
-  padding: 10px; /* Espaçamento interno para os botões */
+  background-color: #0099cc31;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
   border-radius: 12px;
 }
 
-/* Estilo para os botões de idioma */
+.language-control{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Language button styles */
 button.resumo-idioma {
-  background-color: #00000000; /* Cor de fundo preto */
+  background-color: #00000000;
   border: none;
-  padding: 10px; /* Espaçamento interno para os botões */
+  padding: 10px;
   cursor: pointer;
   display: flex;
   align-items: center;
 }
 
-/* Estilo para os ícones de bandeira */
+/* Language icon styles */
 button.resumo-idioma img {
-  width: 24px; /* Ajuste o tamanho do ícone conforme necessário */
-  height: 24px; /* Ajuste o tamanho do ícone conforme necessário */
-  margin-right: 8px; /* Espaço entre o ícone e o texto */
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
 }
 
-/* Estilo para o texto do botão de idioma */
+/* Language button text styles */
 button.resumo-idioma span {
-  font-size: 16px; /* Ajuste o tamanho da fonte conforme necessário */
-  color: #fff; /* Cor do texto (branco) */
+  font-size: 16px;
+  color: #fff;
 }
 
+.resumo-idioma img {
+  filter: grayscale(100%);
+}
+
+/* Carousel controller styles */
 .carousel-controllers {
   margin: auto;
   margin-bottom: 3vh;
   display: flex;
   justify-content: space-between;
   gap: 10px;
-  width: 250px; /* Adjust the width as needed */
+  width: 250px;
 }
 
+/* Individual controller styles */
 .controller {
   width: 82px;
   height: 16px;
+  line-height: 16px;
   border-radius: 8px;
   background: #D6E4FF;
   transition: all .2s ease-in-out;
+  font-size: 0.7em;
+  font-weight: bold;  
+  vertical-align: middle;
+  
 }
 
-.controller:hover{
+.controller:hover {
   cursor: pointer;
   transform: scale(1.05);
 }
+
 .controller:nth-child(1) {
   background: #4785FF; /* Different color for the third controller */
 }
-

@@ -157,7 +157,7 @@ button.resumo-idioma span {
   cursor: pointer;
   transform: scale(1.05);
 }
-.controller:nth-child(1) {
+.controller:nth-child(3) {
   background: #4785FF; /* Different color for the third controller */
 }
 

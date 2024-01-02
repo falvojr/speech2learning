@@ -2,7 +2,8 @@
 /* Esse arquivo contém as estilizações do tipo biblioteca, para criar classes comuns e úteis (tipo uma framework)*/
 
 body{
-  padding: 2vw;
+  padding: .5vw;
+  padding-bottom: 2vw;
 }
 /* For mobile phones: */
 [class*="col-"] {

@@ -14,58 +14,61 @@
     <div class="col-12">
         <button class="border-btn toggle-theme" onclick="toggleContrast()">Contraste</button>
     </div>
-    
 
-    <div class="col-7 col-s-8">
-        <video id="video" controls preload="metadata"></video>
+    <div class="container col-12">
+        <div class="left col-7 col-s-8">
+            <video id="video" controls preload="metadata"></video>
+            <div class="bottom">
+                <b><h3 id="title-text"></h3></b>
+                <p id="description-text"></p>
+            </div>
+            
+        </div>
 
-        <div class="bottom">
-            <h3 id="title-text"></h3>
-            <p id="description-text"></p>
+        <div class="right col-5 col-s-4">
+            <div class="carousel-controllers">
+                <div class="controller">
+                    <button id="resumo-pt-BR" class="resumo-idioma">
+                        <img src="./assets/icon/pt-br.png" alt="Bandeira do Português (BR)">
+                        <p>PT BR</p>
+                    </button>
+                </div>
+                <div class="controller">
+                    <button id="resumo-en-US" class="resumo-idioma">
+                        <img src="./assets/icon/en-us.png" alt="Bandeira do Inglês (US)">
+                        <p>EN US</p>
+                    </button>
+                </div>
+                <div class="controller">
+                    <button id="resumo-es-ES" class="resumo-idioma">
+                        <img src="./assets/icon/es-es.png" alt="Bandeira do Espanhol (ES)">
+                        <p>ES ES</p>
+                    </button>
+                </div>
+            </div>
+            <div class="aside">
+                <!-- Botões de idioma -->
+                <div class="text-area">
+                    <p id="resume-text"></p>
+                </div>
+                <button class="border-btn ocultar-resumo" id="btn-show-resume">Ocultar transcrição</button>
+            </div>
+
+            <!-- Ícone do VLibras para acessibilidade -->
+            <div vw class="enabled vlibras-icon">
+                <div vw-access-button class="active"></div>
+                <div vw-plugin-wrapper>
+                    <div class="vw-plugin-top-wrapper"></div>
+                </div>
+            </div>
+            <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+            <script>
+                new window.VLibras.Widget('https://vlibras.gov.br/app');
+            </script>
         </div>
     </div>
 
-    <div class="col-5 col-s-4">
-        <div class="carousel-controllers">
-            <div class="controller">
-                <button id="resumo-pt-BR" class="resumo-idioma">
-                    <img src="./assets/icon/pt-br.png" alt="Bandeira do Português (BR)">
-                    <p>PT BR</p>
-                </button>
-            </div>
-            <div class="controller">
-                <button id="resumo-en-US" class="resumo-idioma">
-                    <img src="./assets/icon/en-us.png" alt="Bandeira do Inglês (US)">
-                    <p>EN US</p>
-                </button>
-            </div>
-            <div class="controller">
-                <button id="resumo-es-ES" class="resumo-idioma">
-                    <img src="./assets/icon/es-es.png" alt="Bandeira do Espanhol (ES)">
-                    <p>ES ES</p>
-                </button>
-            </div>
-        </div>        
-        <div class="aside">
-            <!-- Botões de idioma -->
-
-            <div class="text-area"><p id="resume-text"></p></div>            
-
-            <button class="border-btn ocultar-resumo" id="btn-show-resume">Ocultar transcrição</button>
-        </div>
-    
-        <!-- Ícone do VLibras para acessibilidade -->
-        <div vw class="enabled vlibras-icon">
-            <div vw-access-button class="active"></div>
-            <div vw-plugin-wrapper>
-            <div class="vw-plugin-top-wrapper"></div>
-            </div>
-        </div>
-        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-        <script>
-            new window.VLibras.Widget('https://vlibras.gov.br/app');
-        </script>
-    </div>
-
-    <script src="js/lib.js"></script>
+    <script src="js/lib.js"></script>    
 </body>
+
+</html>

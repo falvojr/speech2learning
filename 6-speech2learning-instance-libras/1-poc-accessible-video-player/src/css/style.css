@@ -24,16 +24,22 @@ transition: all .2s ease-in-out;
 }
 
 .border-btn:hover{
-transform: scale(1.05);
+transform: scale(0.955);
 cursor: pointer;
 background-color: #4785FF;
 color: #FFF;
 }
 
 .toggle-theme{
-border: 3px solid var(--Primary, black);
-color: black;
+  border: 3px solid var(--Primary, black);
+  color: black;
+
+  font-size: 12px;
+  padding: 6px;
+  min-width: 100px;
+  min-height: 48px;
 }
+
 
 .toggle-theme:hover{
 background-color: black;
@@ -70,25 +76,24 @@ background-color: black;
   
   .aside, .bottom {
     background-color: #FFFFFF;
-    padding: 15px;
     font-size: 14px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     border-radius: 16px;
 
-    /*min-width: 33vw;*/
-    /*min-height: 94vh;*/
-    padding: 3vw
+    height: 100%;
+    padding: 2vw;
   }
 
   .aside.dark, .bottom.dark{
     background-color: #36393E;
     color: #fff;
   }
-
-  .text-area{
-    max-height: 41.4vh;
-    margin-bottom: 4vh;
-    overflow-y: scroll
+  
+  .aside{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    max-height: 100%;
   }
   .bottom{
     margin-top: 4vh;
@@ -96,8 +101,9 @@ background-color: black;
 
   video{
     width: 100%;
-    height: auto;
+    height: 100%;
     border-radius: 16px;
+    z-index: -5;
   }
 
   .resume-text {
@@ -159,7 +165,7 @@ button.resumo-idioma span {
 
 .controller:hover {
   cursor: pointer;
-  transform: scale(1.05);
+  transform: scale(0.955);
 }
 
 /* Adicione uma nova classe para a cor dinâmica */
@@ -168,4 +174,39 @@ button.resumo-idioma span {
   color: #fff;
 }
 
+#title-text{
+  font-weight: bold;
+}
 
+.container {
+  padding: 5vh;
+  height: auto;
+  max-height: 620px;
+  display: flex;
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+.text-area {
+  flex-grow: 0;
+  margin-bottom: 2vh;
+  overflow: auto; /* Add scroll for overflow */
+}
+
+.left, .right {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) { /* Adjust 768px as needed */
+  .container {
+    flex-direction: column; /* Stack children vertically */
+  }
+
+  .left, .right {
+    /* Adjust styles for smaller screens if needed */
+    width: 100% !important; /* Take full width */
+  }
+}

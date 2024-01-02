@@ -1,145 +1,136 @@
-/* Criar aqui um sumário ou cabeçlho */
-/* Esse arquivo contém as estilizações gerais*/
-
-.bg{
-  background-color: #F0F5FF;
+/* Global Styles */
+.bg {
+  background-color: #f0f5ff;
 }
 
-.bg.dark{
+.bg.dark {
   background-color: #000000;
 }
 
-.border-btn{
-font-size: 12px;
-padding: 6px;
-min-width: 160px;
-min-height: 48px;
-border-radius: 24px;
-border: 3px solid var(--Primary, #4785FF);
-color: #4785FF;
-background-color: transparent;
-font-weight: bold;
-
-transition: all .2s ease-in-out;
+.border-btn {
+  font-size: 12px;
+  padding: 6px;
+  min-width: 160px;
+  min-height: 48px;
+  border-radius: 24px;
+  border: 3px solid var(--Primary, #4785ff);
+  color: #4785ff;
+  background-color: transparent;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
 }
 
-.border-btn:hover{
-transform: scale(0.955);
-cursor: pointer;
-background-color: #4785FF;
-color: #FFF;
+.border-btn:hover {
+  transform: scale(0.955);
+  cursor: pointer;
+  background-color: #4785ff;
+  color: #fff;
 }
 
-.toggle-theme{
+.toggle-theme,
+.toggle-theme.dark {
   border: 3px solid var(--Primary, black);
   color: black;
-
   font-size: 12px;
   padding: 6px;
   min-width: 100px;
   min-height: 48px;
 }
 
-
-.toggle-theme:hover{
-background-color: black;
+.toggle-theme:hover,
+.toggle-theme.dark:hover {
+  background-color: var(--Primary, black);
+  color: var(--Secondary, white);
 }
 
-.toggle-theme.dark{
+.toggle-theme.dark {
   border: 3px solid var(--Primary, white);
-  color: white;  
+  color: white;
 }
 
-.toggle-theme.dark:hover{
-  background-color: white;
-  color: black;
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-  .menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .menu li {
-    padding: 8px;
-    margin-bottom: 7px;
-    background-color: #FFFFFF;
-    color: #4785FF;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  }
-  
-  .menu li:hover {
-    background-color: #0099cc;
-  }
+.menu li {
+  padding: 8px;
+  margin-bottom: 7px;
+  background-color: #ffffff;
+  color: #4785ff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
 
-  
-  .aside, .bottom {
-    background-color: #FFFFFF;
-    font-size: 14px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    border-radius: 16px;
+.menu li:hover {
+  background-color: #0099cc;
+}
 
-    height: 100%;
-    padding: 2vw;
-  }
+.aside,
+.bottom {
+  background-color: #ffffff;
+  font-size: 14px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+  height: 100%;
+  padding: 2vw;
+}
 
-  .aside.dark, .bottom.dark{
-    background-color: #36393E;
-    color: #fff;
-  }
-  
-  .aside{
-    display: flex;
-    flex-direction: column;
-    flex-grow: 0;
-    max-height: 100%;
-  }
-  .bottom{
-    margin-top: 4vh;
-  }
+.aside.dark,
+.bottom.dark {
+  background-color: #36393e;
+  color: #fff;
+}
 
-  video{
-    width: 100%;
-    height: 100%;
-    border-radius: 16px;
-    z-index: -5;
-  }
+.aside {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0;
+  max-height: 100%;
+}
 
-  .resume-text {
-    color: #465f96;
-  }
+.bottom {
+  margin-top: 4vh;
+}
 
-/* Estilo para o contêiner dos botões de idioma */
+video {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  z-index: -5;
+}
+
+.resume-text {
+  color: #465f96;
+}
+
+/* Language Buttons Styles */
 #idioma-buttons-container {
-  background-color: #0099cc31; /* Cor de fundo preto */
-  display: flex; /* Exibe os botões em uma linha */
-  justify-content: center; /* Centraliza os botões horizontalmente */
-  padding: 10px; /* Espaçamento interno para os botões */
+  background-color: #0099cc31;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
   border-radius: 12px;
 }
 
-/* Estilo para os botões de idioma */
 button.resumo-idioma {
-  background-color: #00000000; /* Cor de fundo preto */
+  background-color: #00000000;
   border: none;
-  padding: 10px; /* Espaçamento interno para os botões */
+  padding: 10px;
   cursor: pointer;
   display: flex;
   align-items: center;
 }
 
-/* Estilo para os ícones de bandeira */
 button.resumo-idioma img {
-  width: 24px; /* Ajuste o tamanho do ícone conforme necessário */
-  height: 24px; /* Ajuste o tamanho do ícone conforme necessário */
-  margin-right: 8px; /* Espaço entre o ícone e o texto */
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
 }
 
-/* Estilo para o texto do botão de idioma */
 button.resumo-idioma span {
-  font-size: 16px; /* Ajuste o tamanho da fonte conforme necessário */
-  color: #fff; /* Cor do texto (branco) */
+  font-size: 16px;
+  color: #fff;
 }
 
 .carousel-controllers {
@@ -148,19 +139,19 @@ button.resumo-idioma span {
   display: flex;
   justify-content: space-between;
   gap: 10px;
-  width: 250px; /* Adjust the width as needed */
+  width: 250px;
 }
 
 .controller {
   width: 82px;
   height: 46px;
   border-radius: 8px;
-  background: #D6E4FF;
-  transition: all .2s ease-in-out;
+  background: #d6e4ff;
+  transition: all 0.2s ease-in-out;
 }
 
 .controller p {
-  margin: 0; /* Remover a margem dos elementos <p> dentro dos botões */
+  margin: 0;
 }
 
 .controller:hover {
@@ -168,13 +159,12 @@ button.resumo-idioma span {
   transform: scale(0.955);
 }
 
-/* Adicione uma nova classe para a cor dinâmica */
 .controller.active {
-  background: #4785FF;
+  background: #4785ff;
   color: #fff;
 }
 
-#title-text{
+#title-text {
   font-weight: bold;
 }
 
@@ -190,23 +180,24 @@ button.resumo-idioma span {
 .text-area {
   flex-grow: 0;
   margin-bottom: 2vh;
-  overflow: auto; /* Add scroll for overflow */
+  overflow: auto;
 }
 
-.left, .right {
+.left,
+.right {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
-/* Media query for smaller screens */
-@media (max-width: 768px) { /* Adjust 768px as needed */
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
   .container {
-    flex-direction: column; /* Stack children vertically */
+    flex-direction: column;
   }
 
-  .left, .right {
-    /* Adjust styles for smaller screens if needed */
-    width: 100% !important; /* Take full width */
+  .left,
+  .right {
+    width: 100% !important;
   }
 }

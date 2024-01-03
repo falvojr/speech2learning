@@ -67,6 +67,16 @@ async function loadSubtitles(videoElement){
     });
 }
 
+// Função de trocar o contraste da tela
+function toggleContrast() {
+    // Adicionar a classe .dark aos elementos específicos
+    var elementsWithDarkClass = document.querySelectorAll('.bg, .aside, .bottom, .toggle-theme');
+
+    elementsWithDarkClass.forEach(function (element) {
+        element.classList.toggle("dark");
+    });
+}
+
 // Carregar o resumo com base no idioma selecionado
 function carregarResumo(idioma) {
     fetch(url_base+`/api/videos/${api_return.id}/transcript/${idioma}.txt`)
@@ -118,6 +128,42 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 // Eventos para carregar o resumo quando o botão "Ver Resumo" for clicado.
 elements.btnShowResume.addEventListener('click', () => {hideTranscription(); toggleBtnShowResumeVisibility();});
-elements.resumoButtonBR.addEventListener('click', () => {carregarResumo('pt-BR')});
-elements.resumoButtonUS.addEventListener('click', () => {carregarResumo('en-US')});
-elements.resumoButtonES.addEventListener('click', () => {carregarResumo('es-ES')});
+/*
+elements.resumoButtonBR.addEventListener('click', () => {
+    carregarResumo('pt-BR')
+});
+elements.resumoButtonUS.addEventListener('click', () => {
+    carregarResumo('en-US')
+});
+elements.resumoButtonES.addEventListener('click', () => {
+    carregarResumo('es-ES')
+});
+*/
+
+// Adicione um event listener para cada botão
+document.getElementById('resumo-pt-BR').addEventListener('click', function() {
+    carregarResumo('pt-BR');
+    resetControllers(); // Resetar todas as classes
+    this.parentElement.classList.add('active'); // Adicionar classe à linguagem selecionada
+});
+
+document.getElementById('resumo-en-US').addEventListener('click', function() {
+    carregarResumo('en-US');
+    resetControllers();
+    this.parentElement.classList.add('active');
+});
+
+document.getElementById('resumo-es-ES').addEventListener('click', function() {
+    carregarResumo('es-ES');
+    resetControllers();
+    this.parentElement.classList.add('active');
+});
+
+// Função para resetar todas as classes para a cor padrão
+function resetControllers() {
+    const controllers = document.querySelectorAll('.controller');
+    controllers.forEach(controller => {
+        controller.classList.remove('active');
+    });
+}
+  

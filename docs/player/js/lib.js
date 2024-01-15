@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         await loadTitleAndDescription(api_return.metadata.originalLanguage);
 
         // Carregar as legendas
-        await loadSubtitles(videoElement);
+        await loadSubtitles(videoElement); 
 
         // Criar dinamicamente os controles de idioma
         const carouselControllers = document.querySelector('.carousel-controllers');

@@ -143,8 +143,8 @@ button.resumo-idioma span {
 }
 
 .controller {
-  width: 82px;
-  height: 46px;
+  width: auto;
+  height: 100%;
   border-radius: 8px;
   background: #d6e4ff;
   transition: all 0.2s ease-in-out;
@@ -152,6 +152,7 @@ button.resumo-idioma span {
 
 .controller p {
   margin: 0;
+  white-space: nowrap;
 }
 
 .controller:hover {

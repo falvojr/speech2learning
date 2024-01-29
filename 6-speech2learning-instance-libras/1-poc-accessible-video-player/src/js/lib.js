@@ -2,7 +2,7 @@
 const url_base = 'https://falvojr.github.io/speech2learning';
 
 // Variável global para manipular retorno da API
-let api_return = {
+let apiModel = {
     id: '',
     url: '',
     metadata: {
@@ -11,15 +11,17 @@ let api_return = {
     },
 }
 
+// Função para obter elementos da página
+const getById = (id) => document.getElementById(id);
+const getFirstByClass = (className) => document.getElementsByClassName(className)[0];
+
 // Módulo de elementos da página
 const elements = {
-    resumoButtonBR: document.getElementById('resumo-pt-BR'),
-    resumoButtonUS: document.getElementById('resumo-en-US'),
-    resumoButtonES: document.getElementById('resumo-es-ES'),
-    resumoText: document.getElementById('resume-text'),
-    titleText: document.getElementById('title-text'),
-    descriptionText: document.getElementById('description-text'),
-    btnShowResume: document.getElementById('btn-show-resume')
+    resumoButtons: {}, // será preenchido dinamicamente
+    resumoText: getById('resume-text'),
+    titleText: getById('title-text'),
+    descriptionText: getById('description-text'),
+    btnShowResume: getById('btn-show-resume'),
 };
 
 // Função para exibir ou ocultar o botão 'btn-show-resume' com base na transcrição selecionada
@@ -41,7 +43,7 @@ function hideTranscription() {
 // Carregar video a partir do retorno da api
 async function loadVideo(videoElement) {
     const sourceElement = document.createElement('source');
-    sourceElement.src = api_return.url;
+    sourceElement.src = apiModel.url;
     sourceElement.type = 'video/mp4';
     videoElement.appendChild(sourceElement);
 }
@@ -49,14 +51,13 @@ async function loadVideo(videoElement) {
 // Carregar título e descrição a partir do retorno da api, definido a lingua original
 async function loadTitleAndDescription(originalLanguage) {
     let language = originalLanguage;
-    elements.titleText.innerHTML = api_return.metadata.localizations[language].name;
-    elements.descriptionText.innerHTML = api_return.metadata.localizations[language].description;
+    elements.titleText.innerHTML = apiModel.metadata.localizations[language].name;
+    elements.descriptionText.innerHTML = apiModel.metadata.localizations[language].description;
 }
-
 
 // Carregar legendas a partir do retorno da api
 async function loadSubtitles(videoElement) {
-    const localizations = api_return.metadata.localizations;
+    const localizations = apiModel.metadata.localizations;
 
     for (const langCode in localizations) {
         const loc = localizations[langCode];
@@ -66,7 +67,7 @@ async function loadSubtitles(videoElement) {
         trackElement.label = langCode;
         trackElement.srclang = langCode;
         trackElement.src = loc.subtitleUrl;
-        trackElement.default = langCode === api_return.metadata.originalLanguage;
+        trackElement.default = langCode === apiModel.metadata.originalLanguage;
 
         videoElement.appendChild(trackElement);
     }
@@ -84,7 +85,7 @@ function toggleContrast() {
 
 // Carregar o resumo com base no idioma selecionado
 function carregarResumo(idioma) {
-    let linkFetch = api_return.metadata.localizations[idioma].transcriptUrl;
+    let linkFetch = apiModel.metadata.localizations[idioma].transcriptUrl;
 
     fetch(linkFetch)
         .then((response) => response.text())
@@ -112,54 +113,26 @@ function carregarResumo(idioma) {
 
 // Evento para carregar video e legenda ao entrar na página.
 document.addEventListener('DOMContentLoaded', async () => {
-    const videoElement = document.getElementById('video');
+    const videoElement = getById('video');
 
     try {
         const response = await fetch(url_base + '/api/mockV2.json');
         if (!response.ok) throw new Error('Network response was not ok ' + response.statusText);
 
-        api_return = await response.json();
+        apiModel = await response.json();
 
         // Carregar o vídeo
         await loadVideo(videoElement);
 
         // Carregar o título e descrição
-        await loadTitleAndDescription(api_return.metadata.originalLanguage);
+        await loadTitleAndDescription(apiModel.metadata.originalLanguage);
 
         // Carregar as legendas
         await loadSubtitles(videoElement); 
 
         // Criar dinamicamente os controles de idioma
-        const carouselControllers = document.querySelector('.carousel-controllers');
-        for (const langCode in api_return.metadata.localizations) {
-            const controllerDiv = document.createElement('div');
-            controllerDiv.classList.add('controller');
-
-            const button = document.createElement('button');
-            button.id = `resumo-${langCode}`;
-            button.classList.add('resumo-idioma');
-
-            const img = document.createElement('img');
-            img.src = `./assets/icon/${langCode}.png`;
-            img.alt = `Bandeira do ${langCode}`;
-
-            const p = document.createElement('p');
-            p.textContent = langCode;
-
-            button.appendChild(img);
-            button.appendChild(p);
-
-            controllerDiv.appendChild(button);
-
-            carouselControllers.appendChild(controllerDiv);
-
-            // Adicione um event listener para cada botão
-            button.addEventListener('click', function () {
-                carregarResumo(langCode);
-                loadTitleAndDescription(langCode);
-                resetControllers();
-                this.parentElement.classList.add('active');
-            });
+        for (const langCode in apiModel.metadata.localizations) {
+            addLanguageButton(langCode);
         }
         
         // Ocultar botão transcrição
@@ -173,27 +146,37 @@ document.addEventListener('DOMContentLoaded', async () => {
 // Eventos para carregar o resumo quando o botão "Ver Resumo" for clicado.
 elements.btnShowResume.addEventListener('click', () => {hideTranscription(); toggleBtnShowResumeVisibility();});
 
-// Adicione um event listener para cada botão
-document.getElementById('resumo-pt-BR').addEventListener('click', function() {
-    carregarResumo('pt-BR');
-    loadTitleAndDescription('pt-BR');
-    resetControllers(); // Resetar todas as classes
-    this.parentElement.classList.add('active'); // Adicionar classe à linguagem selecionada
-});
+// Função para criar e adicionar elementos de botão de idioma
+function addLanguageButton(langCode) {
+    const carouselControllers = getFirstByClass('carousel-controllers');
+    const controllerDiv = document.createElement('div');
+    controllerDiv.classList.add('controller');
 
-document.getElementById('resumo-en-US').addEventListener('click', function() {
-    carregarResumo('en-US');
-    loadTitleAndDescription('en-US');
-    resetControllers();
-    this.parentElement.classList.add('active');
-});
+    const button = document.createElement('button');
+    button.id = `resumo-${langCode}`;
+    button.classList.add('resumo-idioma');
+    elements.resumoButtons[langCode] = button; // Adicionar ao módulo de elementos
 
-document.getElementById('resumo-es-ES').addEventListener('click', function() {
-    carregarResumo('es-ES');
-    loadTitleAndDescription('es-ES');
-    resetControllers();
-    this.parentElement.classList.add('active');
-});
+    const img = document.createElement('img');
+    img.src = `./assets/icon/${langCode.toLowerCase()}.png`;
+    img.alt = `Bandeira do ${langCode}`;
+
+    const p = document.createElement('p');
+    p.textContent = langCode.toUpperCase();
+
+    button.appendChild(img);
+    button.appendChild(p);
+    controllerDiv.appendChild(button);
+    carouselControllers.appendChild(controllerDiv);
+
+    // Adicionar event listener
+    button.addEventListener('click', function () {
+        carregarResumo(langCode);
+        loadTitleAndDescription(langCode);
+        resetControllers();
+        this.parentElement.classList.add('active');
+    });
+}
 
 // Função para resetar todas as classes para a cor padrão
 function resetControllers() {

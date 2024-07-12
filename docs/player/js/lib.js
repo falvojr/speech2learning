@@ -20,25 +20,8 @@ const elements = {
     resumoButtons: {}, // será preenchido dinamicamente
     resumoText: getById('resume-text'),
     titleText: getById('title-text'),
-    descriptionText: getById('description-text'),
-    btnShowResume: getById('btn-show-resume'),
+    descriptionText: getById('description-text')
 };
-
-// Função para exibir ou ocultar o botão 'btn-show-resume' com base na transcrição selecionada
-function toggleBtnShowResumeVisibility() {
-    // Verificar se há texto na transcrição
-    const hasTranscription = elements.resumoText.textContent.trim().length > 0;
-
-    // Exibir ou ocultar o botão com base na presença de transcrição
-    elements.btnShowResume.style.display = hasTranscription ? 'block' : 'none';
-}
-
-// Função para ocultar a transcrição e o botão 'btn-show-resume'
-function hideTranscription() {
-    elements.resumoText.innerHTML = ''; // Limpar o conteúdo da transcrição
-    
-    elements.btnShowResume.style.display = 'none'; // Ocultar o botão 'btn-show-resume'
-}
 
 // Carregar video a partir do retorno da api
 async function loadVideo(videoElement) {
@@ -102,8 +85,6 @@ function carregarResumo(idioma) {
                 pElement.textContent = paragrafo;
                 elements.resumoText.appendChild(pElement);
             });
-
-            toggleBtnShowResumeVisibility();
         })
         .catch((error) => {
         console.error(`Erro ao carregar resumo em ${idioma}:`, error);
@@ -132,19 +113,15 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Criar dinamicamente os controles de idioma
         for (const langCode in apiModel.metadata.localizations) {
-            addLanguageButton(langCode);
+            const buttonTranscript = addLanguageButton(langCode);
+            if (langCode == 'pt-BR') {
+                buttonTranscript.click();
+            }
         }
-        
-        // Ocultar botão transcrição
-        elements.btnShowResume.style.display = 'none';
-        
     } catch (error) {
         console.error('There has been a problem with your fetch operation:', error);
     }
 });
-
-// Eventos para carregar o resumo quando o botão "Ver Resumo" for clicado.
-elements.btnShowResume.addEventListener('click', () => {hideTranscription(); toggleBtnShowResumeVisibility();});
 
 // Função para criar e adicionar elementos de botão de idioma
 function addLanguageButton(langCode) {
@@ -176,6 +153,8 @@ function addLanguageButton(langCode) {
         resetControllers();
         this.parentElement.classList.add('active');
     });
+
+    return button;
 }
 
 // Função para resetar todas as classes para a cor padrão

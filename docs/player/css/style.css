@@ -134,12 +134,9 @@ button.resumo-idioma span {
 }
 
 .carousel-controllers {
-  margin: auto;
   margin-bottom: 3vh;
   display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  width: 250px;
+  justify-content: space-evenly;
 }
 
 .controller {

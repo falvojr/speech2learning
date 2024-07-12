@@ -27,27 +27,6 @@
   color: #fff;
 }
 
-.toggle-theme,
-.toggle-theme.dark {
-  border: 3px solid var(--Primary, black);
-  color: black;
-  font-size: 12px;
-  padding: 6px;
-  min-width: 100px;
-  min-height: 48px;
-}
-
-.toggle-theme:hover,
-.toggle-theme.dark:hover {
-  background-color: var(--Primary, black);
-  color: var(--Secondary, white);
-}
-
-.toggle-theme.dark {
-  border: 3px solid var(--Primary, white);
-  color: white;
-}
-
 .menu ul {
   list-style-type: none;
   margin: 0;

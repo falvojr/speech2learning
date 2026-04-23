@@ -1,10 +1,10 @@
-# Protocolo de Entrevistas: Speech2Learning (Player v2 + VLibras)
+# Protocolo de Entrevista
 
 **Projeto:** Speech2Learning (CAAE 78381524.3.0000.5390, Emendas E1/E2)
 
 **Player v2:** https://falvojr.github.io/speech2learning/player/v2
 
-**Formato:** videochamada única, até 30 minutos, gravada com consentimento
+**Formato:** videochamada única (Google Meet), até 30 minutos, gravada com consentimento prévio formalizado via TCLE e confirmado no Formulário de Triagem.
 
 **Amostra-alvo:** 10 a 14 participantes bilíngues em Português e Libras.
 
@@ -20,9 +20,9 @@ Esses dois perfis funcionam como critério de diversidade no recrutamento, garan
 ## Fluxo de Recrutamento
 
 1. Divulgação do formulário de interesse em listas acadêmicas e redes especializadas em Libras.
-2. Triagem das respostas pela dupla de ICs, priorizando uma amostra que cubra bem os dois perfis de partida.
+2. Triagem das respostas pela dupla de alunos de IC, priorizando uma amostra que cubra bem os dois perfis de partida.
 3. Contato com os selecionados, por e-mail ou WhatsApp, para combinar dia e horário.
-4. Envio do link da sala de reunião (Google Meet) na confirmação do agendamento. O TCLE já foi aceito no formulário.
+4. Envio do link da sala de reunião (Google Meet) na confirmação do agendamento. O TCLE já foi aceito no formulário de triagem.
 
 ---
 
@@ -101,11 +101,9 @@ Agradecer e informar que os resultados serão compartilhados após a análise.
 
 ## Observações Metodológicas
 
-Esta seção explica, de forma direta, as escolhas por trás do roteiro.
-
 **Por que pedir para "pensar em voz alta" na Fase 2.** A técnica é conhecida como *think-aloud*. Quando a pessoa narra o que está fazendo enquanto usa a interface, conseguimos capturar dúvidas e dificuldades que ela não lembraria de mencionar em uma pergunta direta no final. É uma prática consolidada em estudos de usabilidade desde Lewis (1982) e Nielsen (1993).
 
-**Por que duas escalas diferentes (Likert de 5 na Fase 3, e 0 a 10 na Fase 4).** As escalas medem coisas distintas:
+**Por que duas escalas diferentes (Likert de 5 na Fase 3 e 0 a 10 na Fase 4).** As escalas medem coisas distintas:
 
 - Na **Fase 3**, a escala Likert avalia algo bem específico: a coerência de uma sinalização pontual gerada pelo VLibras para um trecho. Os rótulos ("Muito Incoerente" a "Muito Coerente") são ancorados no próprio domínio linguístico, o que reduz interpretações ambíguas (KROSNICK; PRESSER, 2010).
 - Na **Fase 4**, a escala 0 a 10 mede a satisfação geral com o potencial da solução como um todo. É uma medida de item único (*single-item measure*), que tem validade reconhecida quando o constructo é unidimensional, como neste caso (WANOUS; REICHERS; HUDY, 1997; SAURO; LEWIS, 2016).
@@ -127,8 +125,8 @@ A análise segue o protocolo de Martinelli et al. (2023) para Análise Qualitati
 | Etapa | Descrição |
 |-------|-----------|
 | Preparação | Transcrição integral, anonimização (P1, P2, ..., Pn), com marcação do perfil de partida (A ou B). |
-| Codificação de 1º nível | Codificação aberta e In Vivo, conduzida independentemente pelos dois ICs, para triangulação. |
-| Codificação de 2º nível | Codificação focalizada, axial e temática, com reunião de consenso entre ICs e orientadores. Análise comparativa entre os perfis A e B, aberta à emergência de subgrupos adicionais. |
+| Codificação de 1º nível | Codificação aberta e In Vivo, conduzida independentemente pelos dois alunos de IC, para triangulação. |
+| Codificação de 2º nível | Codificação focalizada, axial e temática, com reunião de consenso entre alunos de IC e orientadores. Análise comparativa entre os perfis A e B, aberta à emergência de subgrupos adicionais. |
 | Visualização | Rede de códigos e mapa temático. |
 | Conclusão | Consolidação do livro de códigos (codebook) e recomendações. |
 

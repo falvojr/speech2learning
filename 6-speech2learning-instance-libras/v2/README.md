@@ -127,7 +127,7 @@ A análise segue o protocolo de Martinelli et al. (2023) para Análise Qualitati
 | Preparação | Transcrição integral, anonimização (P1, P2, ..., Pn), com marcação do perfil de partida (A ou B). |
 | Codificação de 1º nível | Codificação aberta e In Vivo, conduzida independentemente pelos dois alunos de IC, para triangulação. |
 | Codificação de 2º nível | Codificação focalizada, axial e temática, com reunião de consenso entre alunos de IC e orientadores. Análise comparativa entre os perfis A e B, aberta à emergência de subgrupos adicionais. |
-| Visualização | Rede de códigos e mapa temático. |
+| Visualização | Rede de códigos, mapa temático e gráficos de frequência de códigos. |
 | Conclusão | Consolidação do livro de códigos (codebook) e recomendações. |
 
 Thiago lidera a análise qualitativa (codificação, codebook, visualizações). Felipe extrai requisitos de usabilidade e acessibilidade das Fases 2 e 4 para a evolução do Player. Ambos participam da codificação de 1º nível para garantir a triangulação.
